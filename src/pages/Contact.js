@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import emailjs from '@emailjs/browser';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Container, Card, Button, Banner, BannerContent } from '../components/common';
 import { PageSection, PageTitle } from '../styles/PageStyles';
 import { device } from '../styles/theme';
@@ -146,7 +149,21 @@ const SubmitButton = styled(Button)`
   &:hover {
     transform: translateY(-2px);
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    background-color: ${({ theme }) => theme.colors.gray[400]} !important;
+    color: ${({ theme }) => theme.colors.gray[600]} !important;
+    
+    &:hover {
+      transform: none;
+      background-color: ${({ theme }) => theme.colors.gray[400]} !important;
+    }
+  }
 `;
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -154,6 +171,18 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Validation function to check if all required fields are filled
+  const isFormValid = () => {
+    return formData.name.trim() !== '' && 
+           formData.email.trim() !== '' && 
+           formData.message.trim() !== '';
+  };
+
+  // Formspree Configuration from environment variable
+  const FORMSPREE_ID = process.env.REACT_APP_FORMSPREE_ID;
+  
 
   const handleChange = (e) => {
     setFormData({
@@ -162,11 +191,83 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    setIsLoading(true);
+
+
+    try {
+      if (!FORMSPREE_ID || FORMSPREE_ID === 'YOUR_FORM_ID') {
+        toast.error('Contact form is not configured. Please contact me directly at rana1997ritesh@gmail.com', {
+          position: "top-right",
+          autoClose: 10000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+        return;
+      }
+
+      const emailBody = `Hi Ritesh,
+
+${formData.name} sent you a message through your portfolio website.
+
+From: ${formData.name} (${formData.email})
+
+Message:
+${formData.message}
+
+---
+Reply directly to this email to respond to ${formData.name}.
+      `.trim();
+
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        message: emailBody,
+        _replyto: formData.email,
+        _subject: `New message from ${formData.name}`,
+      };
+
+      const formspreeURL = `https://formspree.io/f/${FORMSPREE_ID}`;
+      
+
+      const response = await fetch(formspreeURL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+
+      if (response.ok) {
+        toast.success('Thank you! Your message has been sent successfully. I will get back to you soon!', {
+          position: "top-right",
+          autoClose: 10000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        throw new Error(`Formspree error: ${response.status}`);
+      }
+      
+    } catch (error) {
+      toast.error('Sorry, there was an error sending your message. Please try again or contact me directly at rana1997ritesh@gmail.com', {
+        position: "top-right",
+        autoClose: 10000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -277,11 +378,27 @@ const Contact = () => {
               ></textarea>
             </FormGroup>
             
-            <SubmitButton type="submit" variant="primary">Send Message</SubmitButton>
+            <SubmitButton type="submit" variant="primary" disabled={isLoading || !isFormValid()}>
+              {isLoading ? 'Sending...' : (isFormValid() ? 'Send Message' : 'Fill All Fields')}
+            </SubmitButton>
           </ContactForm>
         </ContactContent>
       </Container>
     </PageSection>
+    
+    {/* Toast Container for notifications */}
+    <ToastContainer
+      position="top-right"
+      autoClose={10000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="light"
+    />
     </>
   );
 };
