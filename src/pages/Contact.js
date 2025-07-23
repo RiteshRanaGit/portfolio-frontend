@@ -5,6 +5,12 @@ import { PageSection, PageTitle } from '../styles/PageStyles';
 import { device } from '../styles/theme';
 import bannerImage from '../assets/images/tai-bui-HzVBe-8frwc-unsplash.jpg';
 
+// Import Icon Images
+import emailIcon from '../assets/icons/email-64.png';
+import phoneIcon from '../assets/icons/phone-.png';
+import locationIcon from '../assets/icons/location-64.png';
+import linkedinIcon from '../assets/icons/linkedin-240.png';
+
 const ContactContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -37,18 +43,47 @@ const ContactDetails = styled.div`
 `;
 
 const ContactItem = styled(Card)`
-  h3 {
-    color: ${({ theme }) => theme.colors.primary};
-    margin-bottom: ${({ theme }) => theme.spacing.sm};
-    font-size: ${({ theme }) => theme.typography.fontSize.base};
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
+  display: flex;
+  align-items: flex-start;
+  gap: ${({ theme }) => theme.spacing.lg};
+  padding: ${({ theme }) => theme.spacing.lg};
+  transition: transform ${({ theme }) => theme.transitions.base};
 
+  &:hover {
+    transform: translateY(-2px);
+  }
+`;
+
+const ContactIconWrapper = styled.div`
+  flex-shrink: 0;
+  
+  img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: ${({ theme }) => theme.colors.gray[100]};
+    padding: ${({ theme }) => theme.spacing.sm};
+  }
+`;
+
+const ContactItemContent = styled.div`
+  flex: 1;
+`;
+
+const ContactTitle = styled.h3`
+  color: ${({ theme }) => theme.colors.text.primary};
+  margin: 0 0 ${({ theme }) => theme.spacing.xs} 0;
+  font-size: ${({ theme }) => theme.typography.fontSize.lg};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.semibold};
+`;
+
+const ContactValue = styled.div`
   a {
-    color: ${({ theme }) => theme.colors.text.primary};
+    color: ${({ theme }) => theme.colors.text.secondary};
     text-decoration: none;
     transition: color ${({ theme }) => theme.transitions.base};
+    font-size: ${({ theme }) => theme.typography.fontSize.base};
 
     &:hover {
       color: ${({ theme }) => theme.colors.primary};
@@ -58,6 +93,7 @@ const ContactItem = styled(Card)`
   p {
     margin: 0;
     color: ${({ theme }) => theme.colors.text.secondary};
+    font-size: ${({ theme }) => theme.typography.fontSize.base};
   }
 `;
 
@@ -151,25 +187,53 @@ const Contact = () => {
             
             <ContactDetails>
               <ContactItem>
-                <h3>Email</h3>
-                <a href="mailto:rana1997ritesh@gmail.com">rana1997ritesh@gmail.com</a>
+                <ContactIconWrapper>
+                  <img src={emailIcon} alt="Email" />
+                </ContactIconWrapper>
+                <ContactItemContent>
+                  <ContactTitle>Email</ContactTitle>
+                  <ContactValue>
+                    <a href="mailto:rana1997ritesh@gmail.com">rana1997ritesh@gmail.com</a>
+                  </ContactValue>
+                </ContactItemContent>
               </ContactItem>
               
               <ContactItem>
-                <h3>Phone</h3>
-                <a href="tel:+919871080053">+91 9871080053</a>
+                <ContactIconWrapper>
+                  <img src={phoneIcon} alt="Phone" />
+                </ContactIconWrapper>
+                <ContactItemContent>
+                  <ContactTitle>Phone</ContactTitle>
+                  <ContactValue>
+                    <a href="tel:+919871080053">+91 9871080053</a>
+                  </ContactValue>
+                </ContactItemContent>
               </ContactItem>
               
               <ContactItem>
-                <h3>Location</h3>
-                <p>Delhi, India 110094</p>
+                <ContactIconWrapper>
+                  <img src={locationIcon} alt="Location" />
+                </ContactIconWrapper>
+                <ContactItemContent>
+                  <ContactTitle>Location</ContactTitle>
+                  <ContactValue>
+                    <p>India</p>
+                  </ContactValue>
+                </ContactItemContent>
               </ContactItem>
               
               <ContactItem>
-                <h3>LinkedIn</h3>
-                <a href="https://linkedin.com/in/ritesh-rana-47a412121" target="_blank" rel="noopener noreferrer">
-                  Connect on LinkedIn
-                </a>
+                <ContactIconWrapper>
+                  <img src={linkedinIcon} alt="LinkedIn" />
+                </ContactIconWrapper>
+                <ContactItemContent>
+                  <ContactTitle>LinkedIn</ContactTitle>
+                  <ContactValue>
+                    <a href="https://linkedin.com/in/ritesh-rana-47a412121" target="_blank" rel="noopener noreferrer">
+                      Connect on LinkedIn
+                    </a>
+                  </ContactValue>
+                </ContactItemContent>
               </ContactItem>
             </ContactDetails>
           </ContactInfo>
