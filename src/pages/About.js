@@ -294,22 +294,8 @@ const About = () => {
     <AboutWrapper>
       <BannerSection>
         <BannerContent>
-          <BannerSubtitle>Hendrix</BannerSubtitle>
+          <BannerSubtitle>Full Stack</BannerSubtitle>
           <BannerTitle>Developer</BannerTitle>
-          <SocialIcons>
-            <SocialIcon href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              {socialIcons.facebook}
-            </SocialIcon>
-            <SocialIcon href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              {socialIcons.twitter}
-            </SocialIcon>
-            <SocialIcon href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-              {socialIcons.youtube}
-            </SocialIcon>
-            <SocialIcon href="https://plus.google.com" target="_blank" rel="noopener noreferrer">
-              {socialIcons.googlePlus}
-            </SocialIcon>
-          </SocialIcons>
         </BannerContent>
         <ScrollIndicator onClick={scrollToContent}>⌄</ScrollIndicator>
       </BannerSection>
@@ -324,7 +310,7 @@ const About = () => {
               <AboutTitle>
                 I'm Ritesh Rana,<br />
                 Full Stack Developer & Cloud Architect<br />
-                from Delhi, India.
+                from the vibrant lands of India.
               </AboutTitle>
               <AboutDescription>
                 I have rich experience in web development & building scalable applications. 

@@ -181,7 +181,7 @@ const Home = () => {
             Hi ! I'm <HeroName>Ritesh.</HeroName>
           </HeroTitle>
           <HeroSubtitle>
-            I'm a Full Stack Developer and Cloud Architect based in Delhi, India.
+            I'm a Full Stack Developer and Cloud Architect crafting digital solutions from India.
           </HeroSubtitle>
           <CTAButton as={Link} to="/about">
             MORE ABOUT ME
@@ -197,44 +197,12 @@ const Home = () => {
           
           <SocialLinks>
             <SocialIcon 
-              href="https://facebook.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              {socialIcons.facebook}
-            </SocialIcon>
-            <SocialIcon 
-              href="https://twitter.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-            >
-              {socialIcons.twitter}
-            </SocialIcon>
-            <SocialIcon 
               href="https://linkedin.com/in/ritesh-rana-47a412121" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
               {socialIcons.linkedin}
-            </SocialIcon>
-            <SocialIcon 
-              href="https://dribbble.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Dribbble"
-            >
-              {socialIcons.dribbble}
-            </SocialIcon>
-            <SocialIcon 
-              href="https://instagram.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              {socialIcons.instagram}
             </SocialIcon>
           </SocialLinks>
         </BottomInfo>
