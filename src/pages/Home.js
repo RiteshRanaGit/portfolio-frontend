@@ -119,9 +119,12 @@ const BottomInfo = styled.div`
   ${animationMixin(fadeInUp, '1s', '0.6s')}
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    flex-direction: column;
+    bottom: ${({ theme }) => theme.spacing.lg};
+    left: ${({ theme }) => theme.spacing.lg};
+    right: ${({ theme }) => theme.spacing.lg};
+    justify-content: space-between;
     align-items: flex-start;
-    gap: ${({ theme }) => theme.spacing.lg};
+    gap: ${({ theme }) => theme.spacing.sm};
   }
 `;
 
@@ -150,6 +153,12 @@ const SocialLinks = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing.lg};
   align-items: center;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
 `;
 
 const SocialIcon = styled.a`
@@ -162,6 +171,11 @@ const SocialIcon = styled.a`
     color: #FF6B4A;
     opacity: 1;
     transform: translateY(-2px);
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: ${({ theme }) => theme.typography.fontSize.xl};
+    padding: ${({ theme }) => theme.spacing.sm};
   }
 `;
 
