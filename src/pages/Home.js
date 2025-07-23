@@ -1,0 +1,246 @@
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { Container, Button } from '../components/common';
+import { device } from '../styles/theme';
+import { fadeIn, fadeInUp, animationMixin } from '../styles/animations';
+import homeBannerImage from '../assets/images/HomePageBanner.jpg';
+
+// Social media icons (using Unicode for now, can be replaced with actual icons)
+const socialIcons = {
+  facebook: '𝐟',
+  twitter: '𝕏',
+  linkedin: 'in',
+  dribbble: '◉',
+  instagram: '📷'
+};
+
+const HomeWrapper = styled.div`
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+`;
+
+const HeroSection = styled.section`
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(${homeBannerImage});
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+`;
+
+const HeroContent = styled.div`
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: ${({ theme }) => theme.spacing.xl};
+  ${animationMixin(fadeIn, '1s', '0.2s')}
+`;
+
+const HeroTitle = styled.h1`
+  font-size: ${({ theme }) => theme.typography.fontSize['4xl']};
+  color: ${({ theme }) => theme.colors.white};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.light};
+  letter-spacing: 2px;
+  
+  @media ${device.md} {
+    font-size: ${({ theme }) => theme.typography.fontSize['5xl']};
+  }
+  
+  @media ${device.lg} {
+    font-size: 5rem;
+  }
+`;
+
+const HeroName = styled.span`
+  color: #FF6B4A;
+  font-weight: ${({ theme }) => theme.typography.fontWeight.semibold};
+`;
+
+const HeroSubtitle = styled.p`
+  font-size: ${({ theme }) => theme.typography.fontSize.lg};
+  color: ${({ theme }) => theme.colors.white};
+  margin-bottom: ${({ theme }) => theme.spacing['3xl']};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.light};
+  letter-spacing: 1px;
+  opacity: 0.9;
+  
+  @media ${device.md} {
+    font-size: ${({ theme }) => theme.typography.fontSize.xl};
+  }
+`;
+
+const CTAButton = styled(Button)`
+  background-color: #FF6B4A !important;
+  color: ${({ theme }) => theme.colors.white} !important;
+  padding: ${({ theme }) => `${theme.spacing.md} ${theme.spacing['2xl']}`};
+  font-size: ${({ theme }) => theme.typography.fontSize.md};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 2px solid #FF6B4A !important;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: transparent !important;
+    color: #FF6B4A !important;
+    transform: translateY(-2px);
+  }
+`;
+
+const BottomInfo = styled.div`
+  position: absolute;
+  bottom: ${({ theme }) => theme.spacing.xl};
+  left: ${({ theme }) => theme.spacing.xl};
+  right: ${({ theme }) => theme.spacing.xl};
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: ${({ theme }) => theme.spacing.xl};
+  ${animationMixin(fadeInUp, '1s', '0.6s')}
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: ${({ theme }) => theme.spacing.lg};
+  }
+`;
+
+const ContactInfo = styled.div`
+  color: ${({ theme }) => theme.colors.white};
+  
+  p {
+    margin-bottom: ${({ theme }) => theme.spacing.sm};
+    font-size: ${({ theme }) => theme.typography.fontSize.sm};
+    opacity: 0.8;
+  }
+  
+  a {
+    color: #FF6B4A;
+    text-decoration: none;
+    font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: #E55A3A;
+    }
+  }
+`;
+
+const SocialLinks = styled.div`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing.lg};
+  align-items: center;
+`;
+
+const SocialIcon = styled.a`
+  color: ${({ theme }) => theme.colors.white};
+  font-size: ${({ theme }) => theme.typography.fontSize.lg};
+  transition: all 0.3s ease;
+  opacity: 0.8;
+  
+  &:hover {
+    color: #FF6B4A;
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+`;
+
+
+const Home = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  return (
+    <HomeWrapper>
+      <HeroSection>
+        <HeroContent>
+          <HeroTitle>
+            Hi ! I'm <HeroName>Ritesh.</HeroName>
+          </HeroTitle>
+          <HeroSubtitle>
+            I'm a Full Stack Developer and Cloud Architect based in Delhi, India.
+          </HeroSubtitle>
+          <CTAButton as={Link} to="/about">
+            MORE ABOUT ME
+          </CTAButton>
+        </HeroContent>
+        
+        <BottomInfo>
+          <ContactInfo>
+            <p>Let's work together</p>
+            <a href="mailto:rana1997ritesh@gmail.com">rana1997ritesh@gmail.com</a>
+            <p>+91 98710 80053</p>
+          </ContactInfo>
+          
+          <SocialLinks>
+            <SocialIcon 
+              href="https://facebook.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              {socialIcons.facebook}
+            </SocialIcon>
+            <SocialIcon 
+              href="https://twitter.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              {socialIcons.twitter}
+            </SocialIcon>
+            <SocialIcon 
+              href="https://linkedin.com/in/ritesh-rana-47a412121" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              {socialIcons.linkedin}
+            </SocialIcon>
+            <SocialIcon 
+              href="https://dribbble.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Dribbble"
+            >
+              {socialIcons.dribbble}
+            </SocialIcon>
+            <SocialIcon 
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              {socialIcons.instagram}
+            </SocialIcon>
+          </SocialLinks>
+        </BottomInfo>
+      </HeroSection>
+    </HomeWrapper>
+  );
+};
+
+export default Home;
