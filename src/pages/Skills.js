@@ -13,6 +13,51 @@ import geminiLogo from '../assets/logo/gemini-ai.png';
 import clineLogo from '../assets/logo/cline.png';
 import augmentLogo from '../assets/logo/augment__logos.jpeg';
 
+// SVG Icons
+import ReactJS from '../assets/svg/ReactJS';
+import ReactNative from '../assets/svg/ReactNative';
+import NextJS from '../assets/svg/NextJS';
+import HTML5 from '../assets/svg/HTML5';
+import CSS3 from '../assets/svg/CSS3';
+import JavaScript from '../assets/svg/JavaScript';
+import TypeScript from '../assets/svg/TypeScript';
+import NodeJS from '../assets/svg/NodeJS';
+import Python from '../assets/svg/Python';
+import ExpressJS from '../assets/svg/ExpressJS';
+import RestAPI from '../assets/svg/RestAPI';
+import MongoDB from '../assets/svg/MongoDB';
+import MySQL from '../assets/svg/MySQL';
+import AWS from '../assets/svg/AWS';
+import Git from '../assets/svg/Git';
+import DefaultSkill from '../assets/svg/DefaultSkill';
+
+// Skill Icon Mapping
+const getSkillIcon = (skillName) => {
+  const iconMap = {
+    'React JS': ReactJS,
+    'React Native': ReactNative,
+    'Next JS': NextJS,
+    'HTML': HTML5,
+    'CSS': CSS3,
+    'JavaScript': JavaScript,
+    'TypeScript': TypeScript,
+    'Node JS': NodeJS,
+    'Python': Python,
+    'Express JS': ExpressJS,
+    'REST APIs': RestAPI,
+    'MongoDB': MongoDB,
+    'MySQL': MySQL,
+    'AWS': AWS,
+    'AWS Amplify': AWS,
+    'AWS Lambda': AWS,
+    'AWS AppSync': AWS,
+    'Git/Version Control': Git,
+  };
+  
+  const IconComponent = iconMap[skillName] || DefaultSkill;
+  return <IconComponent size={20} />;
+};
+
 const SkillsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -51,6 +96,9 @@ const SkillHeader = styled.div`
 const SkillName = styled.span`
   color: ${({ theme }) => theme.colors.text.secondary};
   font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.sm};
 `;
 
 const SkillPercentage = styled.span`
@@ -309,7 +357,10 @@ const Skills = () => {
                 {category.skills.map((skill, idx) => (
                   <SkillItem key={idx}>
                     <SkillHeader>
-                      <SkillName>{skill.name}</SkillName>
+                      <SkillName>
+                        {getSkillIcon(skill.name)}
+                        {skill.name}
+                      </SkillName>
                       <SkillPercentage>{skill.level}%</SkillPercentage>
                     </SkillHeader>
                     <SkillBar>
