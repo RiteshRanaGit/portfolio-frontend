@@ -1,4 +1,4 @@
-export const theme = {
+const baseTheme = {
   colors: {
     primary: '#FF6B4A',
     primaryDark: '#E55A3A',
@@ -122,12 +122,76 @@ export const theme = {
   }
 };
 
+// Light theme
+export const lightTheme = {
+  ...baseTheme,
+  colors: {
+    ...baseTheme.colors,
+    background: '#f8f9fa',
+    backgroundDark: '#ecf0f1',
+    cardBackground: '#ffffff',
+    navBackground: 'rgba(255, 255, 255, 0.98)',
+    text: {
+      primary: '#2c3e50',
+      secondary: '#555',
+      light: '#666',
+      lighter: '#7f8c8d',
+      white: '#ffffff',
+      dark: '#1a1a1a'
+    },
+    border: '#dee2e6'
+  }
+};
+
+// Dark theme
+export const darkTheme = {
+  ...baseTheme,
+  colors: {
+    ...baseTheme.colors,
+    background: '#1a1a1a',
+    backgroundDark: '#0d0d0d',
+    cardBackground: '#2d2d2d',
+    navBackground: 'rgba(26, 26, 26, 0.98)',
+    text: {
+      primary: '#e0e0e0',
+      secondary: '#b0b0b0',
+      light: '#999999',
+      lighter: '#808080',
+      white: '#ffffff',
+      dark: '#1a1a1a'
+    },
+    border: '#404040',
+    gray: {
+      100: '#2d2d2d',
+      200: '#333333',
+      300: '#404040',
+      400: '#4d4d4d',
+      500: '#666666',
+      600: '#808080',
+      700: '#999999',
+      800: '#b3b3b3',
+      900: '#cccccc'
+    }
+  },
+  shadows: {
+    sm: '0 1px 2px 0 rgba(0, 0, 0, 0.3)',
+    base: '0 2px 4px rgba(0, 0, 0, 0.3)',
+    md: '0 4px 6px rgba(0, 0, 0, 0.3)',
+    lg: '0 10px 15px rgba(0, 0, 0, 0.3)',
+    xl: '0 20px 25px rgba(0, 0, 0, 0.3)',
+    none: 'none'
+  }
+};
+
+// Default to light theme
+export const theme = lightTheme;
+
 // Media query helper
 export const device = {
-  xs: `(min-width: ${theme.breakpoints.xs})`,
-  sm: `(min-width: ${theme.breakpoints.sm})`,
-  md: `(min-width: ${theme.breakpoints.md})`,
-  lg: `(min-width: ${theme.breakpoints.lg})`,
-  xl: `(min-width: ${theme.breakpoints.xl})`,
-  '2xl': `(min-width: ${theme.breakpoints['2xl']})`
+  xs: `(min-width: ${baseTheme.breakpoints.xs})`,
+  sm: `(min-width: ${baseTheme.breakpoints.sm})`,
+  md: `(min-width: ${baseTheme.breakpoints.md})`,
+  lg: `(min-width: ${baseTheme.breakpoints.lg})`,
+  xl: `(min-width: ${baseTheme.breakpoints.xl})`,
+  '2xl': `(min-width: ${baseTheme.breakpoints['2xl']})`
 };

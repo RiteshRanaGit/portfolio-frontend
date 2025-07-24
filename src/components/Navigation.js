@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container } from './common';
+import { useTheme } from '../contexts/ThemeContext';
+import darkModeOffIcon from '../assets/logo/dark-mode-100.png';
+import darkModeOnIcon from '../assets/logo/dark-mode-ON-100.png';
 
 const Nav = styled.nav`
   background-color: transparent;
@@ -14,7 +17,11 @@ const Nav = styled.nav`
   transition: all 0.3s ease;
   
   &.scrolled {
-    background-color: rgba(255, 107, 74, 0.95);
+    background-color: ${({ theme }) => 
+      theme.colors.background === '#1a1a1a' 
+        ? 'rgba(26, 26, 26, 0.95)' 
+        : 'rgba(255, 107, 74, 0.95)'
+    };
     backdrop-filter: blur(10px);
     box-shadow: ${({ theme }) => theme.shadows.base};
     position: fixed;
@@ -84,7 +91,7 @@ const MobileMenu = styled.div`
   width: 100%;
   max-width: 100%;
   height: 100%;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.cardBackground};
   z-index: 9999;
   transform: translateX(${({ $isOpen }) => $isOpen ? '0' : '100%'});
   transition: transform 0.3s ease;
@@ -154,9 +161,45 @@ const CloseButton = styled.button`
   }
 `;
 
+const DarkModeToggle = styled.button`
+  background: none;
+  border: none;
+  padding: ${({ theme }) => theme.spacing.sm};
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all ${({ theme }) => theme.transitions.base};
+  margin-left: ${({ theme }) => theme.spacing.lg};
+  
+  img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    transition: all ${({ theme }) => theme.transitions.base};
+  }
+  
+  &:hover {
+    transform: scale(1.1);
+    
+    img {
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0;
+  }
+`;
+
 const DesktopNavLinks = styled.ul`
   display: flex;
   list-style: none;
+  align-items: center;
   gap: ${({ theme }) => theme.spacing.xl};
   align-items: center;
   
@@ -190,6 +233,7 @@ const NavLink = styled(Link)`
   font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
   transition: all ${({ theme }) => theme.transitions.fast};
   position: relative;
+  opacity: ${({ $isActive }) => ($isActive ? 1 : 0.8)};
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     color: ${({ $isActive, theme }) => $isActive ? theme.colors.white : theme.colors.primary};
@@ -211,7 +255,7 @@ const NavLink = styled(Link)`
   
   &:hover {
     color: ${({ theme }) => theme.colors.white};
-    opacity: 0.8;
+    opacity: 1;
   }
   
   &::after {
@@ -252,6 +296,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { isDarkMode, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -308,6 +353,11 @@ const Navigation = () => {
                 </NavLink>
               </li>
             ))}
+            <li>
+              <DarkModeToggle onClick={toggleTheme} $isDarkMode={isDarkMode}>
+                <img src={isDarkMode ? darkModeOnIcon : darkModeOffIcon} alt="Toggle dark mode" />
+              </DarkModeToggle>
+            </li>
           </DesktopNavLinks>
         </NavContainer>
       </Nav>
@@ -332,6 +382,11 @@ const Navigation = () => {
             </li>
           ))}
         </MobileNavLinks>
+        <div style={{ padding: '20px', textAlign: 'center' }}>
+          <DarkModeToggle onClick={toggleTheme} $isDarkMode={isDarkMode} style={{ position: 'relative', right: 'auto', top: 'auto', transform: 'none' }}>
+            <img src={isDarkMode ? darkModeOnIcon : darkModeOffIcon} alt="Toggle dark mode" />
+          </DarkModeToggle>
+        </div>
       </MobileMenu>
     </>
   );

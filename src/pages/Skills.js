@@ -14,49 +14,73 @@ import geminiLogo from '../assets/logo/gemini-ai.png';
 import clineLogo from '../assets/logo/cline.png';
 import augmentLogo from '../assets/logo/augment__logos.jpeg';
 
-// SVG Icons
-import ReactJS from '../assets/svg/ReactJS';
-import ReactNative from '../assets/svg/ReactNative';
-import NextJS from '../assets/svg/NextJS';
-import HTML5 from '../assets/svg/HTML5';
-import CSS3 from '../assets/svg/CSS3';
-import JavaScript from '../assets/svg/JavaScript';
-import TypeScript from '../assets/svg/TypeScript';
-import NodeJS from '../assets/svg/NodeJS';
-import Python from '../assets/svg/Python';
-import ExpressJS from '../assets/svg/ExpressJS';
-import RestAPI from '../assets/svg/RestAPI';
-import MongoDB from '../assets/svg/MongoDB';
-import MySQL from '../assets/svg/MySQL';
-import AWS from '../assets/svg/AWS';
-import Git from '../assets/svg/Git';
-import DefaultSkill from '../assets/svg/DefaultSkill';
+// Technology Icons
+import reactIcon from '../assets/logo/react-js-160.png';
+import reactNativeIcon from '../assets/logo/react-native-256.png';
+import htmlIcon from '../assets/logo/html-5-240.png';
+import cssIcon from '../assets/logo/css-240.png';
+import jsIcon from '../assets/logo/js-144.png';
+import nodeIcon from '../assets/logo/node-js-144.png';
+import pythonIcon from '../assets/logo/python-240.png';
+import expressIcon from '../assets/logo/express-js-100.png';
+import restApiIcon from '../assets/logo/rest-api-100.png';
+import mongoIcon from '../assets/logo/mongo-db-100.png';
+import mysqlIcon from '../assets/logo/my-sql-240.png';
+import awsIcon from '../assets/logo/aws-96.png';
+import gitIcon from '../assets/logo/git-240.png';
+import seleniumIcon from '../assets/logo/selenium-80.png';
+import browserStackIcon from '../assets/logo/browser-stack-240.png';
+import fastApiIcon from '../assets/logo/fast-api-80.png';
+
+// SVG Icons for technologies without PNG icons
+import DotNetFramework from '../assets/svg/DotNetFramework';
+import MAUI from '../assets/svg/MAUI';
 
 // Skill Icon Mapping
 const getSkillIcon = (skillName) => {
   const iconMap = {
-    'React JS': ReactJS,
-    'React Native': ReactNative,
-    'Next JS': NextJS,
-    'HTML': HTML5,
-    'CSS': CSS3,
-    'JavaScript': JavaScript,
-    'TypeScript': TypeScript,
-    'Node JS': NodeJS,
-    'Python': Python,
-    'Express JS': ExpressJS,
-    'REST APIs': RestAPI,
-    'MongoDB': MongoDB,
-    'MySQL': MySQL,
-    'AWS': AWS,
-    'AWS Amplify': AWS,
-    'AWS Lambda': AWS,
-    'AWS AppSync': AWS,
-    'Git/Version Control': Git,
+    'React JS': reactIcon,
+    'React Native': reactNativeIcon,
+    'Next JS': null, // No Next.js icon available
+    'HTML': htmlIcon,
+    'CSS': cssIcon,
+    'JavaScript': jsIcon,
+    'TypeScript': null, // No TypeScript icon available
+    'Node JS': nodeIcon,
+    'Python': pythonIcon,
+    'Express JS': expressIcon,
+    'REST APIs': restApiIcon,
+    'MongoDB': mongoIcon,
+    'MySQL': mysqlIcon,
+    'AWS': awsIcon,
+    'AWS Amplify': awsIcon,
+    'AWS Lambda': awsIcon,
+    'AWS AppSync': awsIcon,
+    'Git/Version Control': gitIcon,
+    'Selenium': seleniumIcon,
+    'Selenium Automation': seleniumIcon,
+    'BrowserStack': browserStackIcon,
+    'Browser Stack': browserStackIcon,
+    'FastAPI': fastApiIcon,
+    'MAUI': 'svg',
+    '.NET Framework': 'svg',
   };
   
-  const IconComponent = iconMap[skillName] || DefaultSkill;
-  return <IconComponent size={20} />;
+  const iconSrc = iconMap[skillName];
+  
+  if (iconSrc === 'svg') {
+    // Handle SVG components
+    if (skillName === 'MAUI') {
+      return <MAUI size={24} />;
+    } else if (skillName === '.NET Framework') {
+      return <DotNetFramework size={24} />;
+    }
+  } else if (iconSrc) {
+    // Handle PNG icons
+    return <img src={iconSrc} alt={skillName} style={{ width: '24px', height: '24px', objectFit: 'contain' }} />;
+  }
+  
+  return null;
 };
 
 const SkillsGrid = styled.div`

@@ -127,7 +127,7 @@ const FormGroup = styled.div`
     font-size: ${({ theme }) => theme.typography.fontSize.base};
     font-family: ${({ theme }) => theme.typography.fontFamily.primary};
     transition: border-color ${({ theme }) => theme.transitions.base};
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.cardBackground};
 
     &:focus {
       outline: none;

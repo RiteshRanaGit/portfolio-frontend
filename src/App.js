@@ -1,10 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
 import { HelmetProvider } from 'react-helmet-async';
 import store from './redux/store';
-import { theme } from './styles/theme';
+import { ThemeProvider } from './contexts/ThemeContext';
 import GlobalStyles from './styles/GlobalStyles';
 import Navigation from './components/Navigation';
 import ScrollToTop from './components/ScrollToTop';
@@ -18,7 +17,7 @@ function App() {
   return (
     <Provider store={store}>
       <HelmetProvider>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider>
           <GlobalStyles />
           <Router>
             <ScrollToTop />

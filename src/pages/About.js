@@ -16,7 +16,7 @@ const socialIcons = {
 };
 
 const AboutWrapper = styled.div`
-  background-color: #f8f9fa;
+  background-color: ${({ theme }) => theme.colors.background};
   min-height: 100vh;
 `;
 
@@ -117,7 +117,7 @@ const ScrollIndicator = styled.div`
 
 const AboutSection = styled.section`
   padding: ${({ theme }) => theme.spacing['5xl']} 0;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.cardBackground};
 `;
 
 const AboutContent = styled.div`
@@ -197,7 +197,11 @@ const DownloadButton = styled(Button)`
 
 const SkillsSection = styled.section`
   padding: ${({ theme }) => theme.spacing['4xl']} 0;
-  background-color: #f8f9fa;
+  background-color: ${({ theme }) => 
+    theme.colors.background === '#1a1a1a' 
+      ? '#0d0d0d'  // Darker background in dark mode
+      : '#f8f9fa'   // Keep light gray in light mode
+  };
 `;
 
 const SectionTitle = styled.h3`
@@ -216,16 +220,28 @@ const SkillsGrid = styled.div`
 `;
 
 const SkillCard = styled.div`
-  background: white;
+  background: ${({ theme }) => 
+    theme.colors.background === '#1a1a1a' 
+      ? '#2d2d2d'  // Light gray in dark mode
+      : 'white'    // White in light mode
+  };
   padding: ${({ theme }) => theme.spacing.xl};
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: ${({ theme }) => 
+    theme.colors.background === '#1a1a1a'
+      ? '0 2px 10px rgba(0, 0, 0, 0.3)'
+      : '0 2px 10px rgba(0, 0, 0, 0.05)'
+  };
   transition: all 0.3s ease;
   
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: ${({ theme }) => 
+      theme.colors.background === '#1a1a1a'
+        ? '0 5px 20px rgba(0, 0, 0, 0.4)'
+        : '0 5px 20px rgba(0, 0, 0, 0.1)'
+    };
   }
 `;
 
@@ -233,7 +249,7 @@ const SkillIcon = styled.div`
   width: 60px;
   height: 60px;
   margin: 0 auto ${({ theme }) => theme.spacing.lg};
-  background: #FF6B4A;
+  background: ${({ theme }) => theme.colors.primary};
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -243,7 +259,7 @@ const SkillIcon = styled.div`
   transition: all 0.3s ease;
   
   &:hover {
-    background: #E55A3A;
+    background: ${({ theme }) => theme.colors.primaryDark};
     transform: scale(1.1);
   }
 `;
@@ -336,7 +352,7 @@ const About = () => {
 
       <SkillsSection>
         <Container>
-          <SectionTitle>What I Do</SectionTitle>
+          <SectionTitle>My Expertise</SectionTitle>
           <SkillsGrid>
             {skills.map((skill, index) => (
               <SkillCard key={index}>
