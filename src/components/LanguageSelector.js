@@ -42,6 +42,10 @@ const LanguageButton = styled.button`
 const DropdownContainer = styled.div`
   position: relative;
   display: inline-block;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    position: static;
+  }
 `;
 
 const Dropdown = styled.div`
@@ -62,8 +66,13 @@ const Dropdown = styled.div`
   transition: all 0.2s ease;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    min-width: 280px;
+    min-width: 90vw;
+    max-width: 90vw;
     max-height: 300px;
+    left: 50%;
+    right: auto;
+    transform: ${({ $isOpen }) => $isOpen ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(-10px)'};
+    margin-top: 8px;
   }
 `;
 
