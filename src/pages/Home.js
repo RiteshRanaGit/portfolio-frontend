@@ -41,7 +41,11 @@ const HeroSection = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: ${({ theme }) => 
+      theme.colors.background === '#1a1a1a' 
+        ? 'rgba(0, 0, 0, 0.7)'  // 70% dark overlay in dark mode
+        : 'rgba(0, 0, 0, 0.4)'  // 40% dark overlay in light mode
+    };
     z-index: 1;
   }
 `;
