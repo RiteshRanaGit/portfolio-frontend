@@ -142,6 +142,10 @@ const ContactInfo = styled.div`
     margin-bottom: ${({ theme }) => theme.spacing.sm};
     font-size: ${({ theme }) => theme.typography.fontSize.sm};
     opacity: 0.8;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   
   a {
@@ -153,10 +157,6 @@ const ContactInfo = styled.div`
     &:hover {
       color: #E55A3A;
     }
-  }
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding-bottom: 8px;
   }
 `;
 

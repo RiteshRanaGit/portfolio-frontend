@@ -244,5 +244,82 @@
     "loading": "Loading...",
     "error": "Something went wrong",
     "tryAgain": "Try Again"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "Last updated: January 2025",
+    "lastUpdated": "Last Updated: January 2025",
+    "sections": {
+      "overview": {
+        "title": "Overview",
+        "content1": "This Privacy Policy outlines how Ritesh Rana's personal portfolio website handles information, copyright matters, and usage terms. This is a personal portfolio website designed to showcase my work, skills, and professional experience.",
+        "content2": "By accessing this website, you acknowledge and agree to the terms outlined in this Privacy Policy."
+      },
+      "personalInfo": {
+        "title": "Personal Information",
+        "content1": "This website does not actively collect or store personal information from visitors. The only personal information displayed is:",
+        "item1": "My professional contact information (email and phone number)",
+        "item2": "My professional background and experience",
+        "item3": "Links to my professional social media profiles"
+      },
+      "copyright": {
+        "title": "Copyright and Intellectual Property",
+        "websiteDesign": {
+          "title": "Website Design",
+          "content": "The design of this website is inspired by various sources across the internet. Any resemblance to existing websites is coincidental. The overall implementation and code structure are original work."
+        },
+        "images": {
+          "title": "Third-Party Images",
+          "content1": "The following images are sourced from open-source platforms and free resources on the internet:",
+          "item1": "Experience page banner image",
+          "item2": "Skills page banner image",
+          "item3": "Contact page banner image",
+          "content2": "If you have any copyright concerns regarding these images, please contact me at",
+          "content3": " and I will promptly address the issue and replace the content if necessary."
+        },
+        "originalContent": {
+          "title": "Original Content",
+          "content1": "The following content is my original work and I claim copyright ownership:",
+          "item1": "Homepage banner background image",
+          "item2": "About page banner image",
+          "item3": "My personal display picture (DP) on the About page",
+          "item4": "The brand logo displayed on the homepage (created with AI assistance)"
+        },
+        "icons": {
+          "title": "Technology Icons",
+          "content": "All technology and tool icons used on this website are either generated using SVG AI tools or downloaded from open-source platforms. These technologies are open-source and their logos are freely available for use in portfolios and educational contexts."
+        }
+      },
+      "aiContent": {
+        "title": "AI-Generated Content",
+        "content1": "All translations on this website from English to other languages (including Hindi) have been generated using AI tools. While efforts have been made to ensure accuracy, there may be errors or inaccuracies in the translations.",
+        "content2": "If you notice any translation errors or have concerns about the translated content, please contact me at",
+        "content3": " or call",
+        "content4": ". I will review and correct any issues promptly. Please note that no legal action can be taken based on AI-generated translation errors."
+      },
+      "contactInfo": {
+        "title": "Contact Information Usage",
+        "content1": "My contact information (email and phone number) is displayed on this website for professional purposes only. Any misuse of this information, including but not limited to spam calls, unauthorized use, or sharing without permission, is strictly prohibited.",
+        "content2": "I reserve the right to take legal action against any individual or entity that misuses my contact information."
+      },
+      "disclaimer": {
+        "title": "General Disclaimer",
+        "content": "This website and its content are provided for informational and portfolio purposes only. While every effort is made to ensure accuracy, some content (particularly AI-generated translations) may contain errors. No liability is accepted for any inaccuracies or omissions."
+      },
+      "contact": {
+        "title": "Contact Information",
+        "content": "For any questions, concerns, or issues related to this Privacy Policy or the website content, please contact:",
+        "email": "Email:",
+        "phone": "Phone:"
+      }
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "contact": "Contact",
+    "privacy": "Privacy Policy"
   }
 }

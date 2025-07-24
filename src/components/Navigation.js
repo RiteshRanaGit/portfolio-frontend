@@ -347,7 +347,8 @@ const Navigation = () => {
     { path: '/about', label: t('nav.about') },
     { path: '/experience', label: t('nav.experience') },
     { path: '/skills', label: t('nav.skills') },
-    { path: '/contact', label: t('nav.contact') }
+    { path: '/contact', label: t('nav.contact') },
+    { path: '/privacy-policy', label: t('nav.privacy') }
   ];
 
   return (

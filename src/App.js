@@ -15,6 +15,7 @@ import About from './pages/About';
 import Experience from './pages/Experience';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
                   <Route path="/experience" element={<Experience />} />
                   <Route path="/skills" element={<Skills />} />
                   <Route path="/contact" element={<Contact />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 </Routes>
               </div>
             </Router>
