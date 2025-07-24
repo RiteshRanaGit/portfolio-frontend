@@ -8,7 +8,7 @@ import darkModeOnIcon from '../assets/logo/dark-mode-ON-100.png';
 
 const Nav = styled.nav`
   background-color: transparent;
-  padding: ${({ theme }) => theme.spacing.md} 0;
+  padding: ${({ theme }) => theme.spacing.md} ${({ theme }) => theme.spacing.xl};
   position: absolute;
   top: 0;
   left: 0;
@@ -28,11 +28,16 @@ const Nav = styled.nav`
   }
 `;
 
-const NavContainer = styled(Container)`
+const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: 0;
+  }
 `;
 
 const Logo = styled(Link)`
