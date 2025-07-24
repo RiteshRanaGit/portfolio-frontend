@@ -7,6 +7,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import GlobalStyles from './styles/GlobalStyles';
 import Navigation from './components/Navigation';
 import ScrollToTop from './components/ScrollToTop';
+import ButterflyEffect from './components/ButterflyEffect';
 import Home from './pages/Home';
 import About from './pages/About';
 import Experience from './pages/Experience';
@@ -19,6 +20,7 @@ function App() {
       <HelmetProvider>
         <ThemeProvider>
           <GlobalStyles />
+          <ButterflyEffect />
           <Router>
             <ScrollToTop />
             <div className="App">
