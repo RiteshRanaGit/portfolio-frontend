@@ -6,6 +6,7 @@ import { device } from '../styles/theme';
 import { fadeIn, fadeInUp, animationMixin } from '../styles/animations';
 import homeBannerImage from '../assets/images/HomePageBanner.jpg';
 import SEO from '../components/SEO';
+import brandLogo from '../assets/BrandLogo/Brandlogo.png';
 
 // Social media icons (using Unicode for now, can be replaced with actual icons)
 const socialIcons = {
@@ -218,14 +219,16 @@ const Home = () => {
           </ContactInfo>
           
           <SocialLinks>
-            <SocialIcon 
-              href="https://linkedin.com/in/ritesh-rana-47a412121" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              {socialIcons.linkedin}
-            </SocialIcon>
+            <img 
+              src={brandLogo} 
+              alt="Ritesh Rana Brand" 
+              style={{ 
+                width: '50px', 
+                height: '50px', 
+                objectFit: 'contain',
+                opacity: 0.9
+              }} 
+            />
           </SocialLinks>
         </BottomInfo>
       </HeroSection>

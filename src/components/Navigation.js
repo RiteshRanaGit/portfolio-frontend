@@ -193,11 +193,9 @@ const DarkModeToggle = styled.button`
   }
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    position: absolute;
-    right: 60px;
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
     margin-left: 0;
+    margin-right: ${({ theme }) => theme.spacing.md};
   }
 `;
 
@@ -284,17 +282,22 @@ const NavLink = styled(Link)`
   }
 `;
 
-const MobileMenuButton = styled.button`
+const MobileControls = styled.div`
   display: none;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.sm};
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    display: flex;
+  }
+`;
+
+const MobileMenuButton = styled.button`
   background: none;
   border: none;
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.typography.fontSize.xl};
   cursor: pointer;
-  
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    display: block;
-  }
 `;
 
 const Navigation = () => {
@@ -343,12 +346,20 @@ const Navigation = () => {
       <Nav className={scrolled ? 'scrolled' : ''}>
         <NavContainer>
           <Logo to="/">Ritesh Rana</Logo>
-          <MobileMenuButton onClick={() => {
-            console.log('Mobile menu clicked, current state:', isOpen);
-            setIsOpen(!isOpen);
-          }}>
-            ☰
-          </MobileMenuButton>
+          
+          {/* Mobile Controls - Dark mode toggle + Hamburger */}
+          <MobileControls>
+            <DarkModeToggle onClick={toggleTheme} $isDarkMode={isDarkMode}>
+              <img src={isDarkMode ? darkModeOnIcon : darkModeOffIcon} alt="Toggle dark mode" />
+            </DarkModeToggle>
+            <MobileMenuButton onClick={() => {
+              console.log('Mobile menu clicked, current state:', isOpen);
+              setIsOpen(!isOpen);
+            }}>
+              ☰
+            </MobileMenuButton>
+          </MobileControls>
+          
           {/* Desktop Menu */}
           <DesktopNavLinks>
             {navItems.map(item => (
@@ -387,11 +398,6 @@ const Navigation = () => {
             </li>
           ))}
         </MobileNavLinks>
-        <div style={{ padding: '20px', textAlign: 'center' }}>
-          <DarkModeToggle onClick={toggleTheme} $isDarkMode={isDarkMode} style={{ position: 'relative', right: 'auto', top: 'auto', transform: 'none' }}>
-            <img src={isDarkMode ? darkModeOnIcon : darkModeOffIcon} alt="Toggle dark mode" />
-          </DarkModeToggle>
-        </div>
       </MobileMenu>
     </>
   );
