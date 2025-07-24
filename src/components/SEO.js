@@ -5,7 +5,7 @@ const SEO = ({
   title = "Ritesh Rana - Full Stack Developer | React Developer | Software Engineer",
   description = "Ritesh Rana is a skilled Full Stack Developer specializing in React, React Native, Next.js, Node.js, and cloud architecture. Hire a professional software developer for web development, mobile apps, and cloud solutions.",
   keywords = "Ritesh Rana, Full Stack Developer, React Developer, Software Developer, Web Developer, React Native Developer, Node.js Developer, JavaScript Developer, TypeScript Developer, Frontend Developer, Backend Developer, Cloud Architect, Software Engineer, Freelance Developer, Delhi Developer, India Developer, Mobile App Developer, MERN Stack Developer, Next.js Developer",
-  image = "/og-image.jpg",
+  image = "/og-image.png",
   url = "https://riteshrana.com",
   type = "website"
 }) => {
@@ -15,10 +15,12 @@ const SEO = ({
     "name": "Ritesh Rana",
     "alternateName": "Ritesh",
     "url": url,
-    "image": image,
+    "image": `https://riteshrana.com${image}`,
+    "logo": "https://riteshrana.com/og-image.png",
     "sameAs": [
       "https://linkedin.com/in/ritesh-rana-47a412121",
-      "https://github.com/RiteshRanaGit"
+      "https://github.com/RiteshRanaGit",
+      "https://riteshrana.com"
     ],
     "jobTitle": "Full Stack Developer",
     "worksFor": {
@@ -49,7 +51,28 @@ const SEO = ({
       "addressRegion": "India"
     },
     "email": "rana1997ritesh@gmail.com",
-    "telephone": "+919871080053"
+    "telephone": "+919871080053",
+    "offers": {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Full Stack Development Services",
+        "description": "Professional web development, mobile app development, and cloud architecture services"
+      }
+    }
+  };
+
+  const websiteStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://riteshrana.com",
+    "name": "Ritesh Rana Portfolio",
+    "description": "Professional portfolio of Ritesh Rana - Full Stack Developer",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://riteshrana.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   };
 
   return (
@@ -90,6 +113,9 @@ const SEO = ({
       {/* Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(websiteStructuredData)}
       </script>
     </Helmet>
   );
