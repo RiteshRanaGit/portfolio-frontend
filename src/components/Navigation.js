@@ -197,7 +197,7 @@ const DarkModeToggle = styled.button`
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     display: flex;
     margin-left: 0;
-    margin-right: ${({ theme }) => theme.spacing.md};
+    margin-right: 2px;
   }
 `;
 
@@ -287,7 +287,7 @@ const NavLink = styled(Link)`
 const MobileControls = styled.div`
   display: none;
   align-items: center;
-  gap: ${({ theme }) => theme.spacing.sm};
+  gap: 2px;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     display: flex;
