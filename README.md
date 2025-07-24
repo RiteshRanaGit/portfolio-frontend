@@ -13,6 +13,7 @@ A modern, responsive portfolio website built with React.js showcasing full-stack
 - **SEO Optimized**: Comprehensive SEO implementation with meta tags, structured data, and sitemap
 - **PWA Ready**: Progressive Web App capabilities with manifest.json
 - **Contact Form**: Functional contact form with Formspree integration
+- **Multi-language Support**: Full internationalization with English and Hindi translations
 
 ## 🛠️ Technologies Used
 
@@ -21,6 +22,7 @@ A modern, responsive portfolio website built with React.js showcasing full-stack
 - **Styled Components** - CSS-in-JS for component styling
 - **React Router** - Client-side routing
 - **JavaScript (ES6+)** - Modern JavaScript features
+- **React i18next** - Internationalization framework for translations
 
 ### Design & Styling
 - **CSS3** - Advanced styling with flexbox and grid
@@ -71,7 +73,13 @@ src/
 │   └── svg/            # Custom SVG icon components
 ├── components/
 │   ├── common/         # Reusable UI components
-│   └── Navigation.js   # Main navigation component
+│   ├── Navigation.js   # Main navigation component
+│   └── LanguageSelector.js # Language switcher component
+├── i18n/
+│   ├── index.js        # i18n configuration
+│   └── locales/        # Translation files
+│       ├── en.json     # English translations
+│       └── hi.json     # Hindi translations
 ├── pages/
 │   ├── Home.js         # Landing page
 │   ├── About.js        # About section
@@ -181,6 +189,87 @@ With these implementations, the portfolio should rank well for:
 3. Track social media sharing metrics
 4. Use PageSpeed Insights for performance
 5. Check structured data with Google's testing tool
+
+## 🌐 Multi-language Support Implementation
+
+### Overview
+We've implemented comprehensive internationalization (i18n) support using React i18next, enabling seamless translation between English and Hindi across the entire portfolio website.
+
+### Features
+- **Complete Translation Coverage**: All content including navigation, page content, skill names, company details, and project descriptions
+- **Dynamic Language Switching**: Instant language change without page reload
+- **Persistent Language Selection**: User's language preference is saved in localStorage
+- **Native Language Display**: Shows language names in their native script (English, हिंदी)
+- **Location-based Suggestions**: Automatically suggests languages based on user's location
+
+### Technical Implementation
+
+#### 1. **i18n Configuration**
+- Configured React i18next with language detection and localStorage persistence
+- Set up fallback language (English) for missing translations
+- Enabled interpolation for dynamic content
+
+#### 2. **Translation Structure**
+```json
+{
+  "nav": { "home", "about", "experience", "skills", "contact" },
+  "home": { "greeting", "name", "subtitle", "cta" },
+  "about": { "title", "description", "expertise" },
+  "skills": { "names", "aitools", "competencies" },
+  "experience": { "companies", "projects" },
+  "contact": { "form", "info", "country" }
+}
+```
+
+#### 3. **Language Selector Component**
+- **Minimal Design**: Shows only language name with dropdown arrow
+- **Hover Effects**: Border appears only on hover for cleaner look
+- **Grouped Controls**: Language selector grouped with dark mode toggle
+- **Responsive**: Adapts to mobile and desktop layouts
+
+#### 4. **Hindi Translations**
+- **Technical Terms**: Properly translated (React → रिएक्ट, Python → पायथन)
+- **Company Names**: Localized while maintaining recognition
+- **Navigation**: Contextually appropriate Hindi terms
+- **UI Elements**: All buttons, placeholders, and messages translated
+
+#### 5. **Key Implementation Details**
+```javascript
+// Translation hook usage
+const { t } = useTranslation();
+
+// Dynamic content translation
+<h1>{t('home.greeting')}</h1>
+
+// Array-based content
+experiences.map(exp => t(`experience.companies.${exp.id}.name`))
+
+// Skill names with icon mapping
+{ name: t('skills.names.reactjs'), iconKey: "React JS" }
+```
+
+### Language Coverage
+- **English**: Complete coverage with professional terminology
+- **Hindi**: Full translation including:
+  - Navigation menu items
+  - Page titles and descriptions
+  - Technical skill names
+  - AI tool descriptions
+  - Company and project details
+  - Form fields and validation messages
+  - Country names (India → भारत)
+
+### User Experience
+1. **Seamless Switching**: Click language selector to instantly change language
+2. **No Page Reload**: All content updates dynamically
+3. **Consistent State**: Language preference persists across sessions
+4. **Clean UI**: Borderless button design with hover effects
+
+### Future Enhancements
+The implementation is scalable to add more languages:
+1. Add new locale file (e.g., `es.json` for Spanish)
+2. Register language in i18n configuration
+3. All components automatically support new language
 
 ## 🚀 Available Scripts
 

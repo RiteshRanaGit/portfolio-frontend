@@ -3,8 +3,10 @@ import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container } from './common';
 import { useTheme } from '../contexts/ThemeContext';
+import { useTranslation } from 'react-i18next';
 import darkModeOffIcon from '../assets/logo/dark-mode-100.png';
 import darkModeOnIcon from '../assets/logo/dark-mode-ON-100.png';
+import LanguageSelector from './LanguageSelector';
 
 const Nav = styled.nav`
   background-color: transparent;
@@ -175,7 +177,7 @@ const DarkModeToggle = styled.button`
   align-items: center;
   justify-content: center;
   transition: all ${({ theme }) => theme.transitions.base};
-  margin-left: ${({ theme }) => theme.spacing.lg};
+  margin-left: ${({ theme }) => theme.spacing.sm};
   
   img {
     width: 24px;
@@ -300,11 +302,18 @@ const MobileMenuButton = styled.button`
   cursor: pointer;
 `;
 
+const ControlsGroup = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.sm};
+`;
+
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const { isDarkMode, toggleTheme } = useTheme();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -334,11 +343,11 @@ const Navigation = () => {
   }, [isOpen]);
 
   const navItems = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
-    { path: '/experience', label: 'Experience' },
-    { path: '/skills', label: 'Skills' },
-    { path: '/contact', label: 'Contact' }
+    { path: '/', label: t('nav.home') },
+    { path: '/about', label: t('nav.about') },
+    { path: '/experience', label: t('nav.experience') },
+    { path: '/skills', label: t('nav.skills') },
+    { path: '/contact', label: t('nav.contact') }
   ];
 
   return (
@@ -347,8 +356,9 @@ const Navigation = () => {
         <NavContainer>
           <Logo to="/">Ritesh Rana</Logo>
           
-          {/* Mobile Controls - Dark mode toggle + Hamburger */}
+          {/* Mobile Controls - Language + Dark mode toggle + Hamburger */}
           <MobileControls>
+            <LanguageSelector />
             <DarkModeToggle onClick={toggleTheme} $isDarkMode={isDarkMode}>
               <img src={isDarkMode ? darkModeOnIcon : darkModeOffIcon} alt="Toggle dark mode" />
             </DarkModeToggle>
@@ -370,9 +380,12 @@ const Navigation = () => {
               </li>
             ))}
             <li>
-              <DarkModeToggle onClick={toggleTheme} $isDarkMode={isDarkMode}>
-                <img src={isDarkMode ? darkModeOnIcon : darkModeOffIcon} alt="Toggle dark mode" />
-              </DarkModeToggle>
+              <ControlsGroup>
+                <LanguageSelector />
+                <DarkModeToggle onClick={toggleTheme} $isDarkMode={isDarkMode}>
+                  <img src={isDarkMode ? darkModeOnIcon : darkModeOffIcon} alt="Toggle dark mode" />
+                </DarkModeToggle>
+              </ControlsGroup>
             </li>
           </DesktopNavLinks>
         </NavContainer>

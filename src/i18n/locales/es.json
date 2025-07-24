@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "experience": "Experiencia",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "home": {
+    "greeting": "¡Hola! Soy",
+    "name": "Ritesh.",
+    "subtitle": "Soy un Desarrollador Full Stack y Arquitecto en la Nube creando soluciones digitales desde India.",
+    "cta": "MÁS SOBRE MÍ",
+    "contact": {
+      "title": "Let's work together",
+      "email": "rana1997ritesh@gmail.com",
+      "phone": "+91 98710 80053"
+    }
+  },
+  "about": {
+    "title": "Developer",
+    "subtitle": "Full Stack",
+    "mainTitle": "I'm Ritesh Rana,<br />Full Stack Developer & Cloud Architect<br />from the vibrant lands of India.",
+    "description": "I have rich experience in web development & building scalable applications. Also I am good at React, Node.js, AWS, and modern web technologies. I love to talk with you about our unique approach. Feel free to contact me writing an email with your project idea.",
+    "downloadResume": "DOWNLOAD RESUME",
+    "expertise": "My Expertise",
+    "skills": {
+      "webDev": {
+        "title": "Web Development",
+        "description": "Building responsive and performant web applications with modern frameworks"
+      },
+      "mobileDev": {
+        "title": "Mobile Development", 
+        "description": "Creating cross-platform mobile apps with React Native"
+      },
+      "cloudArch": {
+        "title": "Cloud Architecture",
+        "description": "Designing scalable solutions with AWS services"
+      },
+      "uiux": {
+        "title": "UI/UX Design",
+        "description": "Crafting intuitive and beautiful user interfaces"
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "What I'm Great At",
+    "description": "I develop simple, intuitive and responsive user interface that helps users get things done with less effort and time with those technologies.",
+    "categories": {
+      "frontend": "Frontend Technologies",
+      "backend": "Backend Technologies", 
+      "database": "Database Technologies",
+      "cloud": "Cloud Technologies"
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "Where I've Worked",
+    "description": "Here's a brief rundown of my most recent experiences."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get In Touch",
+    "description": "Have a project in mind? Let's discuss how we can work together.",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank you! Your message has been sent.",
+      "error": "Something went wrong. Please try again."
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone", 
+      "location": "Location"
+    }
+  },
+  "language": {
+    "selector": {
+      "title": "Select Language",
+      "search": "Search languages...",
+      "suggested": "Suggested",
+      "indian": "Indian Languages",
+      "international": "International",
+      "all": "All Languages"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "tryAgain": "Try Again"
+  }
+}

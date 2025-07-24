@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Container, Button } from '../components/common';
 import { device } from '../styles/theme';
 import { fadeIn, fadeInUp, animationMixin } from '../styles/animations';
@@ -188,6 +189,7 @@ const SocialIcon = styled.a`
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     setIsVisible(true);
@@ -205,21 +207,21 @@ const Home = () => {
       <HeroSection>
         <HeroContent>
           <HeroTitle>
-            Hi ! I'm <HeroName>Ritesh.</HeroName>
+            {t('home.greeting')} <HeroName>{t('home.name')}</HeroName>
           </HeroTitle>
           <HeroSubtitle>
-            I'm a Full Stack Developer and Cloud Architect crafting digital solutions from India.
+            {t('home.subtitle')}
           </HeroSubtitle>
           <CTAButton as={Link} to="/about">
-            MORE ABOUT ME
+            {t('home.cta')}
           </CTAButton>
         </HeroContent>
         
         <BottomInfo>
           <ContactInfo>
-            <p>Let's work together</p>
-            <a href="mailto:rana1997ritesh@gmail.com">rana1997ritesh@gmail.com</a>
-            <p>+91 98710 80053</p>
+            <p>{t('home.contact.title')}</p>
+            <a href={`mailto:${t('home.contact.email')}`}>{t('home.contact.email')}</a>
+            <p>{t('home.contact.phone')}</p>
           </ContactInfo>
           
           <SocialLinks>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { Container, Card, Banner, BannerContent } from '../components/common';
 import { PageSection, PageTitle } from '../styles/PageStyles';
 import { device } from '../styles/theme';
@@ -162,115 +163,116 @@ const ProjectDuration = styled.p`
 `;
 
 const Experience = () => {
+  const { t } = useTranslation();
   const experiences = [
     {
       id: 1,
-      company: "MarsDevs Pvt. Ltd",
-      position: "Full Stack Developer",
-      location: "Delhi, India",
-      duration: "04/2025 - Current",
+      company: t('experience.companies.marsdevs.name'),
+      position: t('experience.companies.marsdevs.position'),
+      location: t('experience.companies.marsdevs.location'),
+      duration: t('experience.companies.marsdevs.duration'),
       responsibilities: [
-        "Spearheaded full-stack development for live web and mobile applications in a collaborative Agile environment",
-        "Built and maintained applications using React JS, React Native, Next JS, Node JS, Python and TypeScript",
-        "Designed and integrated AWS-based serverless architecture using AppSync, Lambda Functions, and related services",
-        "Ensured high code quality through modular coding practices, version control, and performance optimization"
+        t('experience.companies.marsdevs.resp1'),
+        t('experience.companies.marsdevs.resp2'),
+        t('experience.companies.marsdevs.resp3'),
+        t('experience.companies.marsdevs.resp4')
       ]
     },
     {
       id: 2,
-      company: "Eteam Infoservices Pvt. Ltd",
-      position: "Software Engineer",
-      location: "Delhi, India",
-      duration: "04/2022 - 04/2025",
+      company: t('experience.companies.eteam.name'),
+      position: t('experience.companies.eteam.position'),
+      location: t('experience.companies.eteam.location'),
+      duration: t('experience.companies.eteam.duration'),
       responsibilities: [
-        "Delivered scalable full-stack solutions by leading the design, development, and deployment of enterprise-level applications",
-        "Utilized React JS, React Native, Next JS, Node JS, Python, and .NET MAUI Blazor for development",
-        "Designed front-end/back-end architecture and implemented database schemas with clear application flowcharts",
-        "Collaborated with cross-functional teams to improve application performance and code reusability"
+        t('experience.companies.eteam.resp1'),
+        t('experience.companies.eteam.resp2'),
+        t('experience.companies.eteam.resp3'),
+        t('experience.companies.eteam.resp4')
       ]
     },
     {
       id: 3,
-      company: "Experiom Pvt. Ltd",
-      position: "JR. Software Developer",
-      location: "Delhi, India",
-      duration: "04/2021 - 03/2022",
+      company: t('experience.companies.experiom.name'),
+      position: t('experience.companies.experiom.position'),
+      location: t('experience.companies.experiom.location'),
+      duration: t('experience.companies.experiom.duration'),
       responsibilities: [
-        "Contributed to end-to-end project development and deployment with a focus on full-stack responsibilities",
-        "Developed automation scripts using Selenium and integrated them with BrowserStack for testing",
-        "Created Applitools UI test scripts and implemented Amplitude & GTM for analytics and event tracking"
+        t('experience.companies.experiom.resp1'),
+        t('experience.companies.experiom.resp2'),
+        t('experience.companies.experiom.resp3')
       ]
     }
   ];
 
   const projects = [
     {
-      name: "GFY – GoFarmYourself",
-      type: "Agritech Platform | Mobile & Web App",
+      name: t('experience.projects.gfy.name'),
+      type: t('experience.projects.gfy.type'),
       description: [
-        "Developed and deployed a cross-platform React Native mobile app using Expo EAS, integrated with optimized build profiles and native components",
-        "Created a scalable Next.js web application powered by AWS Amplify Gen 2, AppSync (GraphQL APIs), Lambda functions, and DynamoDB",
-        "Focused on performance and user experience through efficient state management, lazy data loading, native animations, and cloud-based deployment pipelines"
+        t('experience.projects.gfy.desc1'),
+        t('experience.projects.gfy.desc2'),
+        t('experience.projects.gfy.desc3')
       ]
     },
     {
-      name: "Bharee",
-      type: "B2B Water Purification Platform",
+      name: t('experience.projects.bharee.name'),
+      type: t('experience.projects.bharee.type'),
       description: [
-        "Developed a scalable web application for B2B water purification infrastructure and distribution",
-        "Built frontend using React JS and SCSS, and backend with Node JS, REST APIs, and MongoDB",
-        "Ensured responsive UI and seamless module integration"
+        t('experience.projects.bharee.desc1'),
+        t('experience.projects.bharee.desc2'),
+        t('experience.projects.bharee.desc3')
       ]
     },
     {
-      name: "Totam",
-      type: "Multi-tenant Hiring Platform",
+      name: t('experience.projects.totam.name'),
+      type: t('experience.projects.totam.type'),
       description: [
-        "Developed a multi-tenant web application using the .NET Framework for hiring and interview management",
-        "Implemented features to enhance communication between managers and candidates",
-        "Focused on modular architecture and access control"
+        t('experience.projects.totam.desc1'),
+        t('experience.projects.totam.desc2'),
+        t('experience.projects.totam.desc3')
       ]
     },
     {
-      name: "Ementor",
-      type: "Cross-platform Educational App",
+      name: t('experience.projects.ementor.name'),
+      type: t('experience.projects.ementor.type'),
       description: [
-        "Built a cross-platform application for Windows, Android, iOS, and macOS using .NET MAUI Blazor",
-        "Worked as a full stack developer using .NET MAUI for frontend and Node JS with MongoDB for backend",
-        "Designed responsive interfaces and optimized database workflows"
+        t('experience.projects.ementor.desc1'),
+        t('experience.projects.ementor.desc2'),
+        t('experience.projects.ementor.desc3')
       ]
     },
     {
-      name: "Lusio",
-      type: "Gaming Platform Interface",
+      name: t('experience.projects.lusio.name'),
+      type: t('experience.projects.lusio.type'),
       description: [
-        "Developed a gaming platform interface using Next JS",
-        "Worked as a frontend developer, focusing on component-based UI and performance"
+        t('experience.projects.lusio.desc1'),
+        t('experience.projects.lusio.desc2')
       ]
     },
     {
-      name: "Theoceann",
-      type: "Maritime-focused Application",
+      name: t('experience.projects.theoceann.name'),
+      type: t('experience.projects.theoceann.type'),
       description: [
-        "Maritime-focused project with front-end development using React JS",
-        "Development in React JS with Python (Fast-API)"
+        t('experience.projects.theoceann.desc1'),
+        t('experience.projects.theoceann.desc2')
       ]
     },
     {
-      name: "Rocket Streets",
-      type: "Stock Market Web Application",
+      name: t('experience.projects.rocketstreets.name'),
+      type: t('experience.projects.rocketstreets.type'),
       description: [
-        "Developed a stock market-focused web application with dynamic data rendering",
-        "Worked as a frontend developer using Next JS, focusing on performance and component-based architecture"
+        t('experience.projects.rocketstreets.desc1'),
+        t('experience.projects.rocketstreets.desc2')
       ]
     },
     {
-      name: "InternTrack",
-      type: "Internship Management System",
+      name: t('experience.projects.interntrack.name'),
+      type: t('experience.projects.interntrack.type'),
       description: [
-        "Developed the frontend using React.js, ensuring a responsive and intuitive user interface",
-        "Designed and implemented a serverless backend on AWS using IAM, EC2, API Gateway, Lambda (Python), DynamoDB, and Amazon Cognito",
-        "Supported team in ensuring cross-browser compatibility and enhancing product quality through QA processes"
+        t('experience.projects.interntrack.desc1'),
+        t('experience.projects.interntrack.desc2'),
+        t('experience.projects.interntrack.desc3')
       ]
     }
   ];
@@ -285,15 +287,15 @@ const Experience = () => {
       />
       <Banner $image={bannerImage} $height="60vh" $mdHeight="60vh" style={{ minHeight: '400px', backgroundAttachment: 'fixed' }}>
         <BannerContent>
-          <h1>Work Experience</h1>
-          <p>My professional journey and key projects</p>
+          <h1>{t('experience.title')}</h1>
+          <p>{t('experience.subtitle')}</p>
         </BannerContent>
       </Banner>
       <PageSection>
         <Container>
         
         <ExperienceSection>
-          <h2>Professional Experience</h2>
+          <h2>{t('experience.description')}</h2>
           <Timeline>
             {experiences.map((exp) => (
               <TimelineItem key={exp.id}>
@@ -316,7 +318,7 @@ const Experience = () => {
         </ExperienceSection>
         
         <ProjectsSection>
-          <h2>Projects</h2>
+          <h2>{t('experience.projects.title')}</h2>
           <ProjectsGrid>
             {projects.map((project, index) => (
               <ProjectCard key={index}>

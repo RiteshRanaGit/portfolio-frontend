@@ -1,0 +1,248 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "home": {
+    "greeting": "Hi ! I'm",
+    "name": "Ritesh.",
+    "subtitle": "I'm a Full Stack Developer and Cloud Architect crafting digital solutions from India.",
+    "cta": "MORE ABOUT ME",
+    "contact": {
+      "title": "Let's work together",
+      "email": "rana1997ritesh@gmail.com",
+      "phone": "+91 98710 80053"
+    }
+  },
+  "about": {
+    "title": "Developer",
+    "subtitle": "Full Stack",
+    "mainTitle": "I'm Ritesh Rana,<br />Full Stack Developer & Cloud Architect<br />from the vibrant lands of India.",
+    "description": "I have rich experience in web development & building scalable applications. Also I am good at React, Node.js, AWS, and modern web technologies. I love to talk with you about our unique approach. Feel free to contact me writing an email with your project idea.",
+    "downloadResume": "DOWNLOAD RESUME",
+    "expertise": "My Expertise",
+    "skills": {
+      "webDev": {
+        "title": "Web Development",
+        "description": "Building responsive and performant web applications with modern frameworks"
+      },
+      "mobileDev": {
+        "title": "Mobile Development", 
+        "description": "Creating cross-platform mobile apps with React Native"
+      },
+      "cloudArch": {
+        "title": "Cloud Architecture",
+        "description": "Designing scalable solutions with AWS services"
+      },
+      "uiux": {
+        "title": "UI/UX Design",
+        "description": "Crafting intuitive and beautiful user interfaces"
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "What I'm Great At",
+    "description": "I develop simple, intuitive and responsive user interface that helps users get things done with less effort and time with those technologies.",
+    "categories": {
+      "frontend": "Frontend Technologies",
+      "backend": "Backend Technologies", 
+      "database": "Database Technologies",
+      "cloud": "Cloud Technologies"
+    },
+    "competencies": {
+      "title": "Key Competencies",
+      "fullstack": {
+        "title": "Full Stack Development",
+        "description": "End-to-end application development from UI/UX to database design"
+      },
+      "serverless": {
+        "title": "Serverless Architecture",
+        "description": "Designing scalable cloud solutions with AWS services"
+      },
+      "agile": {
+        "title": "Agile Methodology",
+        "description": "Experienced in Scrum and collaborative development"
+      },
+      "crossplatform": {
+        "title": "Cross-Platform Development",
+        "description": "Building applications for web, mobile, and desktop"
+      }
+    },
+    "aitools": {
+      "title": "AI-Powered Development Tools",
+      "chatgpt": "Utilized for code generation, debugging, and architectural suggestions during development workflows.",
+      "copilot": "Integrated into VS Code (macOS) for intelligent code completion and automation of repetitive tasks.",
+      "claude": "VS Code - Enabled hands-free coding and terminal interaction using voice commands.",
+      "gemini": "VS Code - Used for in-editor code suggestions, optimization, and inline documentation assistance.",
+      "cline": "VS Code - Used for AI-assisted coding support, project navigation, and intelligent code generation.",
+      "augment": "VS Code - Applied for real-time debugging assistance, test case suggestions, and performance improvements.",
+      "names": {
+        "chatgpt": "OpenAI (ChatGPT)",
+        "copilot": "GitHub Copilot",
+        "claude": "Claude Code",
+        "gemini": "Gemini AI",
+        "cline": "Cline",
+        "augment": "Augment AI"
+      }
+    },
+    "names": {
+      "reactjs": "React JS",
+      "reactnative": "React Native",
+      "nextjs": "Next JS",
+      "html": "HTML",
+      "css": "CSS",
+      "javascript": "JavaScript",
+      "typescript": "TypeScript",
+      "nodejs": "Node JS",
+      "python": "Python",
+      "fastapi": "FastAPI",
+      "restapis": "REST APIs",
+      "expressjs": "Express JS",
+      "mongodb": "MongoDB",
+      "mysql": "MySQL",
+      "aws": "AWS",
+      "awsamplify": "AWS Amplify",
+      "awslambda": "AWS Lambda",
+      "awsappsync": "AWS AppSync",
+      "selenium": "Selenium Automation",
+      "browserstack": "Browser Stack",
+      "maui": "MAUI",
+      "dotnet": ".NET Framework",
+      "git": "Git/Version Control"
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "Where I've Worked",
+    "description": "Here's a brief rundown of my most recent experiences.",
+    "projects": {
+      "title": "Projects",
+      "gfy": {
+        "name": "GFY – GoFarmYourself",
+        "type": "Agritech Platform | Mobile & Web App",
+        "desc1": "Developed and deployed a cross-platform React Native mobile app using Expo EAS, integrated with optimized build profiles and native components",
+        "desc2": "Created a scalable Next.js web application powered by AWS Amplify Gen 2, AppSync (GraphQL APIs), Lambda functions, and DynamoDB",
+        "desc3": "Focused on performance and user experience through efficient state management, lazy data loading, native animations, and cloud-based deployment pipelines"
+      },
+      "bharee": {
+        "name": "Bharee",
+        "type": "B2B Water Purification Platform",
+        "desc1": "Developed a scalable web application for B2B water purification infrastructure and distribution",
+        "desc2": "Built frontend using React JS and SCSS, and backend with Node JS, REST APIs, and MongoDB",
+        "desc3": "Ensured responsive UI and seamless module integration"
+      },
+      "totam": {
+        "name": "Totam",
+        "type": "Multi-tenant Hiring Platform",
+        "desc1": "Developed a multi-tenant web application using the .NET Framework for hiring and interview management",
+        "desc2": "Implemented features to enhance communication between managers and candidates",
+        "desc3": "Focused on modular architecture and access control"
+      },
+      "ementor": {
+        "name": "Ementor",
+        "type": "Cross-platform Educational App",
+        "desc1": "Built a cross-platform application for Windows, Android, iOS, and macOS using .NET MAUI Blazor",
+        "desc2": "Worked as a full stack developer using .NET MAUI for frontend and Node JS with MongoDB for backend",
+        "desc3": "Designed responsive interfaces and optimized database workflows"
+      },
+      "lusio": {
+        "name": "Lusio",
+        "type": "Gaming Platform Interface",
+        "desc1": "Developed a gaming platform interface using Next JS",
+        "desc2": "Worked as a frontend developer, focusing on component-based UI and performance"
+      },
+      "theoceann": {
+        "name": "Theoceann",
+        "type": "Maritime-focused Application",
+        "desc1": "Maritime-focused project with front-end development using React JS",
+        "desc2": "Development in React JS with Python (Fast-API)"
+      },
+      "rocketstreets": {
+        "name": "Rocket Streets",
+        "type": "Stock Market Web Application",
+        "desc1": "Developed a stock market-focused web application with dynamic data rendering",
+        "desc2": "Worked as a frontend developer using Next JS, focusing on performance and component-based architecture"
+      },
+      "interntrack": {
+        "name": "InternTrack",
+        "type": "Internship Management System",
+        "desc1": "Developed the frontend using React.js, ensuring a responsive and intuitive user interface",
+        "desc2": "Designed and implemented a serverless backend on AWS using IAM, EC2, API Gateway, Lambda (Python), DynamoDB, and Amazon Cognito",
+        "desc3": "Supported team in ensuring cross-browser compatibility and enhancing product quality through QA processes"
+      }
+    },
+    "companies": {
+      "marsdevs": {
+        "name": "MarsDevs Pvt. Ltd",
+        "position": "Full Stack Developer",
+        "location": "Delhi, India",
+        "duration": "04/2025 - Current",
+        "resp1": "Spearheaded full-stack development for live web and mobile applications in a collaborative Agile environment",
+        "resp2": "Built and maintained applications using React JS, React Native, Next JS, Node JS, Python and TypeScript",
+        "resp3": "Designed and integrated AWS-based serverless architecture using AppSync, Lambda Functions, and related services",
+        "resp4": "Ensured high code quality through modular coding practices, version control, and performance optimization"
+      },
+      "eteam": {
+        "name": "Eteam Infoservices Pvt. Ltd",
+        "position": "Software Engineer",
+        "location": "Delhi, India",
+        "duration": "04/2022 - 04/2025",
+        "resp1": "Delivered scalable full-stack solutions by leading the design, development, and deployment of enterprise-level applications",
+        "resp2": "Utilized React JS, React Native, Next JS, Node JS, Python, and .NET MAUI Blazor for development",
+        "resp3": "Designed front-end/back-end architecture and implemented database schemas with clear application flowcharts",
+        "resp4": "Collaborated with cross-functional teams to improve application performance and code reusability"
+      },
+      "experiom": {
+        "name": "Experiom Pvt. Ltd",
+        "position": "JR. Software Developer",
+        "location": "Delhi, India",
+        "duration": "04/2021 - 03/2022",
+        "resp1": "Contributed to end-to-end project development and deployment with a focus on full-stack responsibilities",
+        "resp2": "Developed automation scripts using Selenium and integrated them with BrowserStack for testing",
+        "resp3": "Created Applitools UI test scripts and implemented Amplitude & GTM for analytics and event tracking"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get In Touch",
+    "description": "Have a project in mind? Let's discuss how we can work together.",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank you! Your message has been sent.",
+      "error": "Something went wrong. Please try again.",
+      "fillFields": "Fill All Fields"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone", 
+      "location": "Location",
+      "linkedin": "LinkedIn"
+    },
+    "linkedin": "Connect on LinkedIn",
+    "country": "India"
+  },
+  "language": {
+    "selector": {
+      "title": "Select Language",
+      "search": "Search languages...",
+      "suggested": "Suggested",
+      "indian": "Indian Languages",
+      "international": "International",
+      "all": "All Languages"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "tryAgain": "Try Again"
+  }
+}

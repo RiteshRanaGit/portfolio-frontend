@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -167,6 +168,7 @@ const SubmitButton = styled(Button)`
 
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -281,8 +283,8 @@ Reply directly to this email to respond to ${formData.name}.
       />
       <Banner $image={bannerImage} $height="60vh" $mdHeight="60vh" style={{ minHeight: '400px', backgroundAttachment: 'fixed' }}>
         <BannerContent>
-          <h1>Get In Touch</h1>
-          <p>Let's discuss your next project</p>
+          <h1>{t('contact.title')}</h1>
+          <p>{t('contact.subtitle')}</p>
         </BannerContent>
       </Banner>
       <PageSection>
@@ -290,8 +292,8 @@ Reply directly to this email to respond to ${formData.name}.
         
         <ContactContent>
           <ContactInfo>
-            <h2>Let's Connect</h2>
-            <p>I'm always interested in hearing about new opportunities and exciting projects.</p>
+            <h2>{t('contact.subtitle')}</h2>
+            <p>{t('contact.description')}</p>
             
             <ContactDetails>
               <ContactItem>
@@ -299,7 +301,7 @@ Reply directly to this email to respond to ${formData.name}.
                   <img src={emailIcon} alt="Email" />
                 </ContactIconWrapper>
                 <ContactItemContent>
-                  <ContactTitle>Email</ContactTitle>
+                  <ContactTitle>{t('contact.info.email')}</ContactTitle>
                   <ContactValue>
                     <a href="mailto:rana1997ritesh@gmail.com">rana1997ritesh@gmail.com</a>
                   </ContactValue>
@@ -311,7 +313,7 @@ Reply directly to this email to respond to ${formData.name}.
                   <img src={phoneIcon} alt="Phone" />
                 </ContactIconWrapper>
                 <ContactItemContent>
-                  <ContactTitle>Phone</ContactTitle>
+                  <ContactTitle>{t('contact.info.phone')}</ContactTitle>
                   <ContactValue>
                     <a href="tel:+919871080053">+91 9871080053</a>
                   </ContactValue>
@@ -323,9 +325,9 @@ Reply directly to this email to respond to ${formData.name}.
                   <img src={locationIcon} alt="Location" />
                 </ContactIconWrapper>
                 <ContactItemContent>
-                  <ContactTitle>Location</ContactTitle>
+                  <ContactTitle>{t('contact.info.location')}</ContactTitle>
                   <ContactValue>
-                    <p>India</p>
+                    <p>{t('contact.country')}</p>
                   </ContactValue>
                 </ContactItemContent>
               </ContactItem>
@@ -335,10 +337,10 @@ Reply directly to this email to respond to ${formData.name}.
                   <img src={linkedinIcon} alt="LinkedIn" />
                 </ContactIconWrapper>
                 <ContactItemContent>
-                  <ContactTitle>LinkedIn</ContactTitle>
+                  <ContactTitle>{t('contact.info.linkedin')}</ContactTitle>
                   <ContactValue>
                     <a href="https://linkedin.com/in/ritesh-rana-47a412121" target="_blank" rel="noopener noreferrer">
-                      Connect on LinkedIn
+                      {t('contact.linkedin')}
                     </a>
                   </ContactValue>
                 </ContactItemContent>
@@ -347,10 +349,10 @@ Reply directly to this email to respond to ${formData.name}.
           </ContactInfo>
           
           <ContactForm onSubmit={handleSubmit}>
-            <h2>Send a Message</h2>
+            <h2>{t('contact.form.send')}</h2>
             
             <FormGroup>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">{t('contact.form.name')}</label>
               <input
                 type="text"
                 id="name"
@@ -362,7 +364,7 @@ Reply directly to this email to respond to ${formData.name}.
             </FormGroup>
             
             <FormGroup>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">{t('contact.form.email')}</label>
               <input
                 type="email"
                 id="email"
@@ -374,7 +376,7 @@ Reply directly to this email to respond to ${formData.name}.
             </FormGroup>
             
             <FormGroup>
-              <label htmlFor="message">Message</label>
+              <label htmlFor="message">{t('contact.form.message')}</label>
               <textarea
                 id="message"
                 name="message"
@@ -386,7 +388,7 @@ Reply directly to this email to respond to ${formData.name}.
             </FormGroup>
             
             <SubmitButton type="submit" variant="primary" disabled={isLoading || !isFormValid()}>
-              {isLoading ? 'Sending...' : (isFormValid() ? 'Send Message' : 'Fill All Fields')}
+              {isLoading ? t('contact.form.sending') : (isFormValid() ? t('contact.form.send') : t('contact.form.fillFields'))}
             </SubmitButton>
           </ContactForm>
         </ContactContent>

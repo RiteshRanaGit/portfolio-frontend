@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { Container, Button } from '../components/common';
 import { device } from '../styles/theme';
 import { fadeIn, fadeInUp, fadeInLeft, fadeInRight, animationMixin } from '../styles/animations';
@@ -277,6 +278,8 @@ const SkillDescription = styled.p`
 `;
 
 const About = () => {
+  const { t } = useTranslation();
+  
   const scrollToContent = () => {
     window.scrollTo({
       top: window.innerHeight * 0.6,
@@ -287,23 +290,23 @@ const About = () => {
   const skills = [
     {
       icon: '💻',
-      title: 'Web Development',
-      description: 'Building responsive and performant web applications with modern frameworks'
+      title: t('about.skills.webDev.title'),
+      description: t('about.skills.webDev.description')
     },
     {
       icon: '📱',
-      title: 'Mobile Development',
-      description: 'Creating cross-platform mobile apps with React Native'
+      title: t('about.skills.mobileDev.title'),
+      description: t('about.skills.mobileDev.description')
     },
     {
       icon: '☁️',
-      title: 'Cloud Architecture',
-      description: 'Designing scalable solutions with AWS services'
+      title: t('about.skills.cloudArch.title'),
+      description: t('about.skills.cloudArch.description')
     },
     {
       icon: '🎨',
-      title: 'UI/UX Design',
-      description: 'Crafting intuitive and beautiful user interfaces'
+      title: t('about.skills.uiux.title'),
+      description: t('about.skills.uiux.description')
     }
   ];
 
@@ -318,8 +321,8 @@ const About = () => {
       <AboutWrapper>
       <BannerSection>
         <BannerContent>
-          <BannerSubtitle>Full Stack</BannerSubtitle>
-          <BannerTitle>Developer</BannerTitle>
+          <BannerSubtitle>{t('about.subtitle')}</BannerSubtitle>
+          <BannerTitle>{t('about.title')}</BannerTitle>
         </BannerContent>
         <ScrollIndicator onClick={scrollToContent}>⌄</ScrollIndicator>
       </BannerSection>
@@ -331,19 +334,12 @@ const About = () => {
               <ProfileImage src={profileImage} alt="Ritesh Rana" />
             </ProfileImageWrapper>
             <AboutText>
-              <AboutTitle>
-                I'm Ritesh Rana,<br />
-                Full Stack Developer & Cloud Architect<br />
-                from the vibrant lands of India.
-              </AboutTitle>
+              <AboutTitle dangerouslySetInnerHTML={{ __html: t('about.mainTitle') }} />
               <AboutDescription>
-                I have rich experience in web development & building scalable applications. 
-                Also I am good at React, Node.js, AWS, and modern web technologies. 
-                I love to talk with you about our unique approach. 
-                Feel free to contact me writing an email with your project idea.
+                {t('about.description')}
               </AboutDescription>
               <DownloadButton as="a" href="/Ritesh_Rana_Resume.pdf" download>
-                DOWNLOAD RESUME
+                {t('about.downloadResume')}
               </DownloadButton>
             </AboutText>
           </AboutContent>
@@ -352,7 +348,7 @@ const About = () => {
 
       <SkillsSection>
         <Container>
-          <SectionTitle>My Expertise</SectionTitle>
+          <SectionTitle>{t('about.expertise')}</SectionTitle>
           <SkillsGrid>
             {skills.map((skill, index) => (
               <SkillCard key={index}>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { Container, Card, Banner, BannerContent } from '../components/common';
 import { PageSection, PageTitle } from '../styles/PageStyles';
 import { device } from '../styles/theme';
@@ -31,6 +32,8 @@ import gitIcon from '../assets/logo/git-240.png';
 import seleniumIcon from '../assets/logo/selenium-80.png';
 import browserStackIcon from '../assets/logo/browser-stack-240.png';
 import fastApiIcon from '../assets/logo/fast-api-80.png';
+import typescriptIcon from '../assets/logo/typescript-240.png';
+import nextjsIcon from '../assets/logo/nextjs-240.png';
 
 // SVG Icons for technologies without PNG icons
 import DotNetFramework from '../assets/svg/DotNetFramework';
@@ -41,11 +44,11 @@ const getSkillIcon = (skillName) => {
   const iconMap = {
     'React JS': reactIcon,
     'React Native': reactNativeIcon,
-    'Next JS': null, // No Next.js icon available
+    'Next JS': nextjsIcon,
     'HTML': htmlIcon,
     'CSS': cssIcon,
     'JavaScript': jsIcon,
-    'TypeScript': null, // No TypeScript icon available
+    'TypeScript': typescriptIcon,
     'Node JS': nodeIcon,
     'Python': pythonIcon,
     'Express JS': expressIcon,
@@ -284,82 +287,84 @@ const AITechContent = styled.div`
 `;
 
 const Skills = () => {
+  const { t } = useTranslation();
+  
   const skillCategories = [
     {
-      category: "Frontend Technologies",
+      category: t('skills.categories.frontend'),
       skills: [
-        { name: "React JS", level: 90 },
-        { name: "React Native", level: 85 },
-        { name: "Next JS", level: 85 },
-        { name: "HTML", level: 95 },
-        { name: "CSS", level: 90 },
-        { name: "JavaScript", level: 90 },
-        { name: "TypeScript", level: 80 }
+        { name: t('skills.names.reactjs'), level: 90, iconKey: "React JS" },
+        { name: t('skills.names.reactnative'), level: 85, iconKey: "React Native" },
+        { name: t('skills.names.nextjs'), level: 85, iconKey: "Next JS" },
+        { name: t('skills.names.html'), level: 95, iconKey: "HTML" },
+        { name: t('skills.names.css'), level: 90, iconKey: "CSS" },
+        { name: t('skills.names.javascript'), level: 90, iconKey: "JavaScript" },
+        { name: t('skills.names.typescript'), level: 80, iconKey: "TypeScript" }
       ]
     },
     {
-      category: "Backend Technologies",
+      category: t('skills.categories.backend'),
       skills: [
-        { name: "Node JS", level: 85 },
-        { name: "Python", level: 80 },
-        { name: "Fast-API", level: 75 },
-        { name: "REST APIs", level: 90 },
-        { name: "Express JS", level: 85 }
+        { name: t('skills.names.nodejs'), level: 85, iconKey: "Node JS" },
+        { name: t('skills.names.python'), level: 80, iconKey: "Python" },
+        { name: t('skills.names.fastapi'), level: 75, iconKey: "FastAPI" },
+        { name: t('skills.names.restapis'), level: 90, iconKey: "REST APIs" },
+        { name: t('skills.names.expressjs'), level: 85, iconKey: "Express JS" }
       ]
     },
     {
-      category: "Database & Cloud",
+      category: t('skills.categories.database'),
       skills: [
-        { name: "MongoDB", level: 85 },
-        { name: "MySQL", level: 80 },
-        { name: "AWS", level: 85 },
-        { name: "AWS Amplify", level: 80 },
-        { name: "AWS Lambda", level: 80 },
-        { name: "AWS AppSync", level: 75 }
+        { name: t('skills.names.mongodb'), level: 85, iconKey: "MongoDB" },
+        { name: t('skills.names.mysql'), level: 80, iconKey: "MySQL" },
+        { name: t('skills.names.aws'), level: 85, iconKey: "AWS" },
+        { name: t('skills.names.awsamplify'), level: 80, iconKey: "AWS Amplify" },
+        { name: t('skills.names.awslambda'), level: 80, iconKey: "AWS Lambda" },
+        { name: t('skills.names.awsappsync'), level: 75, iconKey: "AWS AppSync" }
       ]
     },
     {
-      category: "Other Technologies",
+      category: t('skills.categories.cloud'),
       skills: [
-        { name: "Selenium Automation", level: 75 },
-        { name: "Browser Stack", level: 70 },
-        { name: "MAUI", level: 70 },
-        { name: ".NET Framework", level: 75 },
-        { name: "Git/Version Control", level: 90 }
+        { name: t('skills.names.selenium'), level: 75, iconKey: "Selenium Automation" },
+        { name: t('skills.names.browserstack'), level: 70, iconKey: "Browser Stack" },
+        { name: t('skills.names.maui'), level: 70, iconKey: "MAUI" },
+        { name: t('skills.names.dotnet'), level: 75, iconKey: ".NET Framework" },
+        { name: t('skills.names.git'), level: 90, iconKey: "Git/Version Control" }
       ]
     }
   ];
 
   const aiTechnologies = [
     {
-      name: "OpenAI (ChatGPT)",
+      name: t('skills.aitools.names.chatgpt'),
       logo: chatGptLogo,
-      description: "Utilized for code generation, debugging, and architectural suggestions during development workflows."
+      description: t('skills.aitools.chatgpt')
     },
     {
-      name: "GitHub Copilot",
+      name: t('skills.aitools.names.copilot'),
       logo: githubCopilotLogo,
-      description: "Integrated into VS Code (macOS) for intelligent code completion and automation of repetitive tasks."
+      description: t('skills.aitools.copilot')
     },
     {
-      name: "Claude Code",
+      name: t('skills.aitools.names.claude'),
       logo: claudeLogo,
-      description: "VS Code - Enabled hands-free coding and terminal interaction using voice commands."
+      description: t('skills.aitools.claude')
     },
     {
-      name: "Gemini AI",
+      name: t('skills.aitools.names.gemini'),
       logo: geminiLogo,
-      description: "VS Code - Used for in-editor code suggestions, optimization, and inline documentation assistance."
+      description: t('skills.aitools.gemini')
     },
     {
-      name: "Cline",
+      name: t('skills.aitools.names.cline'),
       logo: clineLogo,
-      description: "VS Code - Used for AI-assisted coding support, project navigation, and intelligent code generation."
+      description: t('skills.aitools.cline')
     },
     {
-      name: "Augment AI",
+      name: t('skills.aitools.names.augment'),
       logo: augmentLogo,
-      description: "VS Code - Applied for real-time debugging assistance, test case suggestions, and performance improvements."
+      description: t('skills.aitools.augment')
     }
   ];
 
@@ -373,8 +378,8 @@ const Skills = () => {
       />
       <Banner $image={bannerImage} $height="60vh" $mdHeight="60vh" style={{ minHeight: '400px', backgroundAttachment: 'fixed' }}>
         <BannerContent>
-          <h1>Technical Skills</h1>
-          <p>Technologies and tools I work with</p>
+          <h1>{t('skills.title')}</h1>
+          <p>{t('skills.description')}</p>
         </BannerContent>
       </Banner>
       <PageSection>
@@ -389,7 +394,7 @@ const Skills = () => {
                   <SkillItem key={idx}>
                     <SkillHeader>
                       <SkillName>
-                        {getSkillIcon(skill.name)}
+                        {getSkillIcon(skill.iconKey || skill.name)}
                         {skill.name}
                       </SkillName>
                       <SkillPercentage>{skill.level}%</SkillPercentage>
@@ -405,23 +410,23 @@ const Skills = () => {
         </SkillsGrid>
         
         <AdditionalSkills>
-          <h2>Key Competencies</h2>
+          <h2>{t('skills.competencies.title')}</h2>
           <CompetenciesGrid>
             <CompetencyItem>
-              <h3>Full Stack Development</h3>
-              <p>End-to-end application development from UI/UX to database design</p>
+              <h3>{t('skills.competencies.fullstack.title')}</h3>
+              <p>{t('skills.competencies.fullstack.description')}</p>
             </CompetencyItem>
             <CompetencyItem>
-              <h3>Serverless Architecture</h3>
-              <p>Designing scalable cloud solutions with AWS services</p>
+              <h3>{t('skills.competencies.serverless.title')}</h3>
+              <p>{t('skills.competencies.serverless.description')}</p>
             </CompetencyItem>
             <CompetencyItem>
-              <h3>Agile Methodology</h3>
-              <p>Experienced in Scrum and collaborative development</p>
+              <h3>{t('skills.competencies.agile.title')}</h3>
+              <p>{t('skills.competencies.agile.description')}</p>
             </CompetencyItem>
             <CompetencyItem>
-              <h3>Cross-Platform Development</h3>
-              <p>Building applications for web, mobile, and desktop</p>
+              <h3>{t('skills.competencies.crossplatform.title')}</h3>
+              <p>{t('skills.competencies.crossplatform.description')}</p>
             </CompetencyItem>
           </CompetenciesGrid>
         </AdditionalSkills>
@@ -430,7 +435,7 @@ const Skills = () => {
     
     <AITechnologiesSection>
       <Container>
-        <h2>AI-Powered Development Tools</h2>
+        <h2>{t('skills.aitools.title')}</h2>
         <AITechGrid>
           {aiTechnologies.map((tech, index) => (
             <AITechCard key={index}>
