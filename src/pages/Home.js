@@ -130,7 +130,7 @@ const BottomInfo = styled.div`
     left: ${({ theme }) => theme.spacing.lg};
     right: ${({ theme }) => theme.spacing.lg};
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: ${({ theme }) => theme.spacing.sm};
   }
 `;
@@ -154,6 +154,10 @@ const ContactInfo = styled.div`
       color: #E55A3A;
     }
   }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding-bottom: 8px;
+  }
 `;
 
 const SocialLinks = styled.div`
@@ -162,7 +166,6 @@ const SocialLinks = styled.div`
   align-items: center;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    flex-direction: column;
     align-items: flex-end;
     justify-content: flex-end;
   }
@@ -244,7 +247,7 @@ const Home = () => {
         <h2>Ritesh Rana - Professional Full Stack Developer</h2>
         <p>Ritesh Rana is a highly skilled Full Stack Developer and Software Engineer based in India. With expertise in React.js, React Native, Next.js, Node.js, JavaScript, TypeScript, Python, and cloud architecture. Specializing in building scalable web applications, mobile applications, and cloud solutions. Available for freelance projects, contract work, and full-time opportunities. Contact Ritesh Rana for professional software development services.</p>
         <p>Skills: React Developer, React Native Developer, Node.js Developer, JavaScript Developer, TypeScript Developer, Python Developer, AWS Cloud Architect, Full Stack Engineer, MERN Stack Developer, Frontend Developer, Backend Developer, Mobile App Developer, Web Developer, Software Developer, Cloud Solutions Architect.</p>
-        <p>Location: India | Email: rana1997ritesh@gmail.com | Phone: +91 9871080053</p>
+        <p>Location: India | Email: <span className="selectable">rana1997ritesh@gmail.com</span> | Phone: <span className="selectable">+91 9871080053</span></p>
       </div>
     </HomeWrapper>
     </>

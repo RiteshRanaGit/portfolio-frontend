@@ -201,7 +201,7 @@ const Contact = () => {
 
     try {
       if (!FORMSPREE_ID || FORMSPREE_ID === 'YOUR_FORM_ID') {
-        toast.error('Contact form is not configured. Please contact me directly at rana1997ritesh@gmail.com', {
+        toast.error(<span>Contact form is not configured. Please contact me directly at <span className="selectable">rana1997ritesh@gmail.com</span></span>, {
           position: "top-right",
           autoClose: 10000,
           hideProgressBar: false,
@@ -260,7 +260,7 @@ Reply directly to this email to respond to ${formData.name}.
       }
       
     } catch (error) {
-      toast.error('Sorry, there was an error sending your message. Please try again or contact me directly at rana1997ritesh@gmail.com', {
+      toast.error(<span>Sorry, there was an error sending your message. Please try again or contact me directly at <span className="selectable">rana1997ritesh@gmail.com</span></span>, {
         position: "top-right",
         autoClose: 10000,
         hideProgressBar: false,
@@ -303,7 +303,7 @@ Reply directly to this email to respond to ${formData.name}.
                 <ContactItemContent>
                   <ContactTitle>{t('contact.info.email')}</ContactTitle>
                   <ContactValue>
-                    <a href="mailto:rana1997ritesh@gmail.com">rana1997ritesh@gmail.com</a>
+                    <a href="mailto:rana1997ritesh@gmail.com" className="selectable">rana1997ritesh@gmail.com</a>
                   </ContactValue>
                 </ContactItemContent>
               </ContactItem>
@@ -315,7 +315,7 @@ Reply directly to this email to respond to ${formData.name}.
                 <ContactItemContent>
                   <ContactTitle>{t('contact.info.phone')}</ContactTitle>
                   <ContactValue>
-                    <a href="tel:+919871080053">+91 9871080053</a>
+                    <a href="tel:+919871080053" className="selectable">+91 9871080053</a>
                   </ContactValue>
                 </ContactItemContent>
               </ContactItem>
