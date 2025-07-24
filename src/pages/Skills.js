@@ -4,6 +4,7 @@ import { Container, Card, Banner, BannerContent } from '../components/common';
 import { PageSection, PageTitle } from '../styles/PageStyles';
 import { device } from '../styles/theme';
 import bannerImage from '../assets/images/robs-HOrhCnQsxnQ-unsplash.jpg';
+import SEO from '../components/SEO';
 
 // AI Tool Logos
 import chatGptLogo from '../assets/logo/chatgpt.png';
@@ -340,6 +341,12 @@ const Skills = () => {
 
   return (
     <>
+      <SEO 
+        title="Skills - Ritesh Rana | Technical Expertise & Technologies"
+        description="Explore Ritesh Rana's technical skills including React.js, React Native, Node.js, Python, AWS, and more. View proficiency levels in frontend, backend, and cloud technologies."
+        keywords="Ritesh Rana Skills, Technical Skills, React Developer Skills, Full Stack Skills, Programming Languages, Web Development Skills, Cloud Skills, Database Skills, Frontend Skills, Backend Skills"
+        url="https://riteshrana.com/skills"
+      />
       <Banner $image={bannerImage} $height="60vh" $mdHeight="60vh" style={{ minHeight: '400px', backgroundAttachment: 'fixed' }}>
         <BannerContent>
           <h1>Technical Skills</h1>

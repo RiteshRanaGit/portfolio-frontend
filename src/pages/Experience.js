@@ -4,6 +4,7 @@ import { Container, Card, Banner, BannerContent } from '../components/common';
 import { PageSection, PageTitle } from '../styles/PageStyles';
 import { device } from '../styles/theme';
 import bannerImage from '../assets/images/remy_loz-3S0INpfREQc-unsplash.jpg';
+import SEO from '../components/SEO';
 
 const ExperienceSection = styled.section`
   margin-bottom: ${({ theme }) => theme.spacing['4xl']};
@@ -276,6 +277,12 @@ const Experience = () => {
 
   return (
     <>
+      <SEO 
+        title="Experience - Ritesh Rana | Professional Work History"
+        description="View Ritesh Rana's professional experience as a Full Stack Developer. Projects include HDFC Bank systems, education platforms, and innovative web applications."
+        keywords="Ritesh Rana Experience, Professional Experience, Work History, Software Developer Experience, Project Portfolio, HDFC Bank Developer, Full Stack Projects, React Developer Experience"
+        url="https://riteshrana.com/experience"
+      />
       <Banner $image={bannerImage} $height="60vh" $mdHeight="60vh" style={{ minHeight: '400px', backgroundAttachment: 'fixed' }}>
         <BannerContent>
           <h1>Work Experience</h1>

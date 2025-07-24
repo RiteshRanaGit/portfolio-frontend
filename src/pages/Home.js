@@ -5,6 +5,7 @@ import { Container, Button } from '../components/common';
 import { device } from '../styles/theme';
 import { fadeIn, fadeInUp, animationMixin } from '../styles/animations';
 import homeBannerImage from '../assets/images/HomePageBanner.jpg';
+import SEO from '../components/SEO';
 
 // Social media icons (using Unicode for now, can be replaced with actual icons)
 const socialIcons = {
@@ -188,7 +189,14 @@ const Home = () => {
   }, []);
 
   return (
-    <HomeWrapper>
+    <>
+      <SEO 
+        title="Ritesh Rana - Full Stack Developer | React Developer | Cloud Architect"
+        description="Welcome to Ritesh Rana's portfolio. Expert Full Stack Developer specializing in React.js, React Native, Node.js, and cloud solutions. Available for freelance projects and full-time opportunities."
+        keywords="Ritesh Rana, Full Stack Developer, React Developer, Cloud Architect, Software Engineer, Web Developer, Mobile App Developer, India Developer, Freelance Developer, React.js Expert, Node.js Developer"
+        url="https://riteshrana.com"
+      />
+      <HomeWrapper>
       <HeroSection>
         <HeroContent>
           <HeroTitle>
@@ -221,7 +229,16 @@ const Home = () => {
           </SocialLinks>
         </BottomInfo>
       </HeroSection>
+      
+      {/* Hidden SEO Content for Better Search Engine Ranking */}
+      <div style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
+        <h2>Ritesh Rana - Professional Full Stack Developer</h2>
+        <p>Ritesh Rana is a highly skilled Full Stack Developer and Software Engineer based in India. With expertise in React.js, React Native, Next.js, Node.js, JavaScript, TypeScript, Python, and cloud architecture. Specializing in building scalable web applications, mobile applications, and cloud solutions. Available for freelance projects, contract work, and full-time opportunities. Contact Ritesh Rana for professional software development services.</p>
+        <p>Skills: React Developer, React Native Developer, Node.js Developer, JavaScript Developer, TypeScript Developer, Python Developer, AWS Cloud Architect, Full Stack Engineer, MERN Stack Developer, Frontend Developer, Backend Developer, Mobile App Developer, Web Developer, Software Developer, Cloud Solutions Architect.</p>
+        <p>Location: India | Email: rana1997ritesh@gmail.com | Phone: +91 9871080053</p>
+      </div>
     </HomeWrapper>
+    </>
   );
 };
 

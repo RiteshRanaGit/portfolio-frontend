@@ -7,6 +7,7 @@ import { Container, Card, Button, Banner, BannerContent } from '../components/co
 import { PageSection, PageTitle } from '../styles/PageStyles';
 import { device } from '../styles/theme';
 import bannerImage from '../assets/images/tai-bui-HzVBe-8frwc-unsplash.jpg';
+import SEO from '../components/SEO';
 
 // Import Icon Images
 import emailIcon from '../assets/icons/email-64.png';
@@ -272,6 +273,12 @@ Reply directly to this email to respond to ${formData.name}.
 
   return (
     <>
+      <SEO 
+        title="Contact Ritesh Rana - Hire Full Stack Developer"
+        description="Get in touch with Ritesh Rana for freelance projects, full-time opportunities, or technical consulting. Available for React, Node.js, and cloud development projects."
+        keywords="Contact Ritesh Rana, Hire Full Stack Developer, Freelance Developer Contact, React Developer for Hire, Node.js Developer Contact, Software Development Services, Technical Consulting"
+        url="https://riteshrana.com/contact"
+      />
       <Banner $image={bannerImage} $height="60vh" $mdHeight="60vh" style={{ minHeight: '400px', backgroundAttachment: 'fixed' }}>
         <BannerContent>
           <h1>Get In Touch</h1>

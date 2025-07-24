@@ -5,6 +5,7 @@ import { device } from '../styles/theme';
 import { fadeIn, fadeInUp, fadeInLeft, fadeInRight, animationMixin } from '../styles/animations';
 import aboutBannerImage from '../assets/images/AboutBanner.jpg';
 import profileImage from '../assets/images/dp.jpg';
+import SEO from '../components/SEO';
 
 // Social media icons
 const socialIcons = {
@@ -291,7 +292,14 @@ const About = () => {
   ];
 
   return (
-    <AboutWrapper>
+    <>
+      <SEO 
+        title="About Ritesh Rana - Full Stack Developer & Software Engineer"
+        description="Learn about Ritesh Rana, a passionate Full Stack Developer with expertise in React, Node.js, and cloud architecture. Discover my journey, skills, and professional experience in software development."
+        keywords="About Ritesh Rana, Full Stack Developer Biography, Software Engineer Profile, React Developer Story, Professional Developer, India Software Developer, Ritesh Rana Background, Developer Portfolio"
+        url="https://riteshrana.com/about"
+      />
+      <AboutWrapper>
       <BannerSection>
         <BannerContent>
           <BannerSubtitle>Full Stack</BannerSubtitle>
@@ -340,7 +348,16 @@ const About = () => {
           </SkillsGrid>
         </Container>
       </SkillsSection>
+      
+      {/* Hidden SEO Content */}
+      <div style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
+        <h1>About Ritesh Rana - Expert Full Stack Developer</h1>
+        <p>Ritesh Rana is a professional Full Stack Developer and Software Engineer from India with extensive experience in modern web technologies. Specializing in React.js, React Native, Next.js, Node.js, Express.js, MongoDB, PostgreSQL, AWS, and cloud architecture. Ritesh has successfully delivered numerous projects for clients worldwide.</p>
+        <p>Technical Skills: JavaScript ES6+, TypeScript, Python, Java, HTML5, CSS3, SASS, Redux, Context API, RESTful APIs, GraphQL, Docker, Kubernetes, CI/CD, Git, Agile Development, Test-Driven Development (TDD), Microservices Architecture.</p>
+        <p>Services Offered: Web Application Development, Mobile App Development, API Development, Cloud Solutions, Database Design, UI/UX Implementation, Performance Optimization, Code Reviews, Technical Consulting, Freelance Development.</p>
+      </div>
     </AboutWrapper>
+    </>
   );
 };
 
